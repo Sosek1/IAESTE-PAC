@@ -17,11 +17,11 @@ const router = createHashRouter([
         element: <StartingPage />,
       },
       {
-        path: "QRpage",
+        path: "QR",
         element: <QRpage />,
       },
       {
-        path: "instructionPage",
+        path: "instruction",
         element: <InstructionPage />,
       },
       {
