@@ -5,7 +5,7 @@ import { colors } from "@mui/material";
 
 const InstructionPage = () => {
   return(
-    <main>
+    <main className={classes.InstructionPage}>
       <section>
         <header>
             <img src = {logo}/>

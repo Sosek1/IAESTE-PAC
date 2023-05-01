@@ -1,4 +1,4 @@
-main{
+.InstructionPage{
     background-color: white;
     height: 100vh;
     padding: 40px;
@@ -8,43 +8,43 @@ main{
     justify-content: flex-start;
 }
 
-section{
+.InstructionPage section{
     margin: auto 0;
 }
 
-img{
+.InstructionPage img{
     height: 32px;
 }
 
-header{
+.InstructionPage header{
     text-align: center;
     width: 100%;
     margin-bottom: 40px;
 }
 
-h3{
+.InstructionPage h3{
     color: darkslategrey;
 }
 
-h4{
+.InstructionPage h4{
     color: gray;
     font-weight: normal;
 }
 
-ul{
+.InstructionPage ul{
     width: 100%;
     list-style: none;
 }
 
-li{
+.InstructionPage li{
     margin-bottom: 20px;
 }
 
-span{
+.InstructionPage span{
     color:grey;
 }
 
-button{
+.InstructionPage button{
     width: 80%;
     border-radius: 26px;
     height: 40px;
@@ -55,10 +55,10 @@ button{
     margin-top: auto;
 }
 
-li div{
+.InstructionPage li div{
     display: flex;
 }
 
-ul{
+.InstructionPage ul{
     margin: 0;
 }
