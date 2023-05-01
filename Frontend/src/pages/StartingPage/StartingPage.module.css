@@ -1,0 +1,17 @@
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+div{
+    background-image: linear-gradient(to top right, #e7407d, #ef805e);
+    height: 100vh;
+}
+
+h1{
+    color: white;
+}
+
