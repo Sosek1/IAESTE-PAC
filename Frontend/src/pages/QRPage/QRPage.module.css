@@ -1,0 +1,24 @@
+.QRPage{
+    background-image: linear-gradient(to top right, #e7407d, #ef805e);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+} 
+
+.QRPage header{
+    display: flex;
+    align-items: center;
+}
+
+.QRPage h1{
+    color: white;
+} 
+
+.QRPage img{
+    height: 32px;
+}
+.QRPage2 img{
+    height: 300px;
+}
