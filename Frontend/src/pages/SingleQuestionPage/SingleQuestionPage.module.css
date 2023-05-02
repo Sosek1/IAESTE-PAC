@@ -1,0 +1,73 @@
+.SingleQuestionPage {
+    text-align: center;
+    align-items: center; 
+    justify-content: flex-start;
+    
+}
+.SingleQuestionPage img{
+    height: 47px;
+}
+.SingleQuestionPage header{
+    text-align: left;
+    padding-top: 15%;
+    padding-left: 20%;
+}
+.Question{
+    margin-top: 30%;
+}
+
+.SubmitAnswer{
+    width: 80%;
+    border-radius: 26px;
+    height: 40px;
+    background-image: linear-gradient(to right, #e7407d, #ef805e);
+    color: white;
+    font-weight: bold;
+    border: none;
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left:10%;
+    text-align: center;
+
+    
+}
+
+.SingleQuestionPage ul{
+    list-style-type: none;
+    max-width: 100%;
+    overflow-y: auto;
+    gap: 15px;   
+    display: flex;
+    padding-left: 23%;
+    padding-top: 20%;
+    flex-direction: column; 
+    margin-bottom: 20px;
+}
+.Deactive{
+    box-sizing: border-box;
+    border: 1px solid #B0B0B0;
+    border-radius: 25px;
+    width: auto;
+    max-width: 70%;
+    align-items: center;
+}
+
+.Active{
+    box-sizing: border-box;
+    border: 1px solid;
+    border-color: #e7407d;
+    border-radius: 25px;
+    width: auto;
+    max-width: 70%;
+    align-items: center;
+}
+.backButton{
+    border:none;
+    background-color: transparent;
+    position: absolute;
+    top: 10px;
+    left:10px;
+    font-size: large;
+    display: flex;
+}
