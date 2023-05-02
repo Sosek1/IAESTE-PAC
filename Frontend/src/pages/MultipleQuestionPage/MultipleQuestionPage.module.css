@@ -18,6 +18,17 @@
     font-size: x-large;
     color: #B0B0B0;
 }
+.selected{
+    border: 1px solid #FF6B6B;
+    color: #FF6B6B;
+    width: calc(100% / 3 - 20px);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    list-style-type: none;
+    text-align: center;
+    font-size: x-large;
+}
 .container{
     display: flex;
     flex-direction: column;
