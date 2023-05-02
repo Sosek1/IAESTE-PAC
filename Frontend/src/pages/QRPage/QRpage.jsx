@@ -1,5 +1,5 @@
 import classes from "./QRPage.module.css";
-import logo from "../../assets/tinder-logo-red.png";
+import logo from "../../assets/logo-white3.png";
 import QR from "../../assets/QR1.png";
 
 const QRpage = () => {
@@ -10,10 +10,12 @@ const QRpage = () => {
         <h1>Sprawdź IAESTinder</h1>
       </header>
 
-      <p>
-        Dzięki zeskanowaniu kodu QR będziesz mógł skorzystać z naszej aplikacji
-        w swoim telefonie!
+      <p style={{ textAlign: "center" }}>
+        Dzięki zeskanowaniu kodu QR będziesz mógł skorzystać <br></br> z naszej
+        aplikacji w swoim telefonie!
       </p>
+      <br></br>
+      <br></br>
       <p className={classes.QRPage2}>
         <img src={QR} />
       </p>
