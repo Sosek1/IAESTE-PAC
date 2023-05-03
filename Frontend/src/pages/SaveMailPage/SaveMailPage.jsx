@@ -12,17 +12,15 @@ const SaveMailPage = () => {
   };
   return (
     <>
+      <button type="button" className={classes.backButton}>
+        <ChevronLeftIcon style={{ fontSize: "60px", color: "gray" }} />
+      </button>
       <main className={classes.SaveMailPage}>
         <section>
-          <button type="button" className={classes.backButton}>
-            <ChevronLeftIcon style={{ fontSize: "60px", color: "gray" }} />
-          </button>
           <h1 className={classes.header}>What's your email?</h1>
-
           <p className={classes.paragraph}>
             Don't lose access to your account, verify your email.
           </p>
-
           <div className={classes.SearchBar}>
             <form action="">
               <input
