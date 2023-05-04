@@ -6,6 +6,7 @@ import MultipleQuestionPage from "./pages/MultipleQuestionPage/MultipleQuestionP
 import SingleQuestionPage from "./pages/SingleQuestionPage/SingleQuestionPage";
 import SaveMailPage from "./pages/SaveMailPage/SaveMailPage";
 import ErrorPage from "./pages/ErrorPage/ErrorPage";
+import EndingPage from "./pages/EndingPage/EndingPage";
 
 const router = createHashRouter([
   {
@@ -35,6 +36,10 @@ const router = createHashRouter([
       {
         path: "saveMail",
         element: <SaveMailPage />,
+      },
+      {
+        path: "theend",
+        element: <EndingPage />,
       },
     ],
   },
