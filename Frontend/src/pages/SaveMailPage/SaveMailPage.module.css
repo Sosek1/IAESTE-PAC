@@ -7,11 +7,7 @@
   align-items: center;
   justify-content: flex-start;
 }
-.backButton {
-  position: fixed;
-  border: none;
-  background-color: transparent;
-}
+
 .header {
   text-align: center;
   display: flex;
@@ -26,24 +22,34 @@
   font-size: 18px;
   color: rgb(176, 172, 172);
 }
-.SearchBar {
+
+.SaveMailPage section {
+  height: 100%;
   display: flex;
-  /* position: fixed; */
-  margin-top: 5%;
+  flex-direction: column;
 }
-.SearchBar input {
-  width: 130%;
+.SaveMailPage form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* position: fixed; */
+  margin-top: 10px;
+}
+.SaveMailPage input {
+  width: 100%;
   height: 50px;
   font-size: 20px;
   border: none;
+  font-weight: 500;
   border-bottom: 2px solid gray;
 }
-.SearchBar input:focus {
+.SaveMailPage input:focus {
   outline: none;
 }
 .sendBottomColor {
-  width: 80%;
+  width: 100%;
   border-radius: 26px;
+  font-size: 18px;
   height: 40px;
   background-image: linear-gradient(to right, #e7407d, #ef805e);
   box-shadow: 0 4px 2px -2px gray;
@@ -53,7 +59,7 @@
   margin-top: auto;
 }
 .sendBottomGray {
-  width: 80%;
+  width: 100%;
   border-radius: 26px;
   height: 40px;
   background-color: gray;

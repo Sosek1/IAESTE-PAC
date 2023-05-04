@@ -1,20 +1,22 @@
-.StartingPage{
-    background-image: linear-gradient(to top right, #e7407d, #ef805e);
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} 
-
-.StartingPage header{
-    display: flex;
-    align-items: center;
+.StartingPage {
+  background-image: linear-gradient(to top right, #e7407d, #ef805e);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.StartingPage h1{
-    color: white;
-} 
+.StartingPage header {
+  display: flex;
+  align-items: center;
+}
 
-.StartingPage img{
-    height: 32px;
+.StartingPage h1 {
+  font-size: 36px;
+  color: white;
+  margin-left: 5px;
+}
+
+.StartingPage img {
+  height: 45px;
 }

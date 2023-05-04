@@ -1,64 +1,75 @@
-.InstructionPage{
-    background-color: white;
-    height: 100vh;
-    padding: 40px;
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: flex-start;
+.InstructionPage {
+  background-color: white;
+  height: 100vh;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
-.InstructionPage section{
-    margin: auto 0;
+.InstructionPage section {
+  margin: auto 0;
 }
 
-.InstructionPage img{
-    height: 32px;
+.InstructionPage img {
+  height: 45px;
 }
 
-.InstructionPage header{
-    text-align: center;
-    width: 100%;
-    margin-bottom: 40px;
+.InstructionPage header {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 40px;
 }
 
-.InstructionPage h3{
-    color: darkslategrey;
+.InstructionPage h2 {
+  font-size: 24px;
 }
 
-.InstructionPage h4{
-    color: gray;
-    font-weight: normal;
+.InstructionPage h3 {
+  color: darkslategrey;
 }
 
-.InstructionPage ul{
-    width: 100%;
-    list-style: none;
+.InstructionPage h4 {
+  font-size: 18px;
+  color: gray;
+  font-weight: normal;
 }
 
-.InstructionPage li{
-    margin-bottom: 20px;
+.InstructionPage ul {
+  width: 100%;
+  list-style: none;
 }
 
-.InstructionPage span{
-    color:grey;
+.InstructionPage li {
+  margin-bottom: 20px;
 }
 
-.InstructionPage button{
-    width: 80%;
-    border-radius: 26px;
-    height: 40px;
-    background-image: linear-gradient(to right, #e7407d, #ef805e);
-    color: white;
-    font-weight: bold;
-    border: none;
-    margin-top: auto;
+.InstructionPage span {
+  color: grey;
 }
 
-.InstructionPage li div{
-    display: flex;
+.InstructionPage a {
+  text-decoration: none;
+  width: 100%;
 }
 
-.InstructionPage ul{
-    margin: 0;
+.InstructionPage button {
+  width: 100%;
+  height: 40px;
+  border-radius: 26px;
+  background-image: linear-gradient(to right, #e7407d, #ef805e);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  margin-top: auto;
+}
+
+.InstructionPage li div {
+  display: flex;
+}
+
+.InstructionPage ul {
+  margin: 0;
 }
