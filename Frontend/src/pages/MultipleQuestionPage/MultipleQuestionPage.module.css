@@ -1,251 +1,106 @@
-<<<<<<< Updated upstream
 .progress_bar_container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 8px;
-  display: flex;
-  background-color: #f1f1f1;
-  overflow: hidden;
-}
-
-.progress_bar_fill {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  background-image: linear-gradient(to top right, #e7407d, #ef805e);
-
-  transition: width 0.3s ease-in-out;
-}
-
-.container {
-  height: 100vh;
-  padding: 0px 40px 40px 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.head {
-}
-
-.title {
-  font-size: 50px;
-  margin-bottom: 20px;
-}
-.text {
-  font-size: 18px;
-  word-break: normal;
-  text-align: left;
-  color: #b0b0b0;
-}
-
-.list {
-  width: 100%;
-  max-height: 300px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  overflow-y: auto;
-}
-
-.list_item {
-  padding: 5px 10px;
-  border: 1px solid #b0b0b0;
-  border-radius: 30px;
-  list-style-type: none;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 600;
-  color: #b0b0b0;
-}
-
-.list_item_active {
-  color: #ff6b6b;
-  border-color: #ff6b6b;
-}
-
-.selected {
-  border: 1px solid #ff6b6b;
-  color: #ff6b6b;
-  width: calc(100% / 3 - 20px);
-  padding: 20px;
-  box-sizing: border-box;
-  border-radius: 40px;
-  list-style-type: none;
-  text-align: center;
-  font-size: x-large;
-}
-
-.large_button {
-  height: 40px;
-  width: 100%;
-  margin-top: auto;
-  font-size: 18px;
-  background-image: linear-gradient(to right, #e7407d, #ef805e);
-  color: white;
-  border-radius: 26px;
-  border: none;
-  font-weight: 500;
-}
-
-.large_button:focus {
-  outline: none;
-}
-
-/* .disabled_large_button {
-  display: block;
-  width: 65%;
-  padding: 20px;
-  font-size: xx-large;
-  border: none;
-  border-radius: 20px;
-  background-color: #f1f1f1;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-} */
-=======
-.list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 8px;
     display: flex;
-    justify-content: left;
-    align-content: flex-start;
-    margin-left: 5%;
-    padding-right: 10px;
-    flex-wrap: wrap;
-    max-width: 100%;
-    overflow-y: scroll;
-    height: 40vh;
-    gap: 5px;
-}
-
-.list_item {
-    height: 30px;
-    padding: 0 10px;
-    border: 1px solid #B0B0B0;
-    color: #B0B0B0;
-    border-radius: 40px;
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    font-weight: 400;
-    
-}
-
-.selected{
-    height: 30px;
-    padding: 0 10px;
-    border: 2px solid #FF6B6B;
-    color: #FF6B6B;
-    border-radius: 40px;
-    list-style-type: none;
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    font-weight: 600;
-    
-}
-
-.body{
+    background-color: #f1f1f1;
+    overflow: hidden;
+  }
+  
+  .progress_bar_fill {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: linear-gradient(to top right, #e7407d, #ef805e);
+  
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .container {
+    height: 100vh;
+    padding: 0px 40px 40px 20px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    align-content: center;
-    gap: 40px;
-    margin-bottom: auto;
-    height: 80vh;
-}
-
-
-.title{
-    width: 100%;
+  }
+  
+  
+  .title {
     font-size: 50px;
-    font-weight: 600;
-    margin-left: 20%;
-    height: 60px;
-}
-
-.text{
-    width: 100%;
-    margin-left: 20%;
+    margin-bottom: 20px;
+  }
+  .text {
     font-size: 18px;
     word-break: normal;
     text-align: left;
-    color:#B0B0B0;
-}
-
-
-.progress_bar_container {
+    color: #b0b0b0;
+  }
+  
+  .list {
     width: 100%;
-    height: 10px;
-    background-color: #f1f1f1;
-    /* border-radius: 10px; */
+    max-height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
     margin-bottom: 20px;
-    overflow: hidden;
-}
-
-.head{
-    width: 100%;
-
-}
-
-.progress_bar_fill {
-    height: 100%;
-    background-image: linear-gradient(to top right, #e7407d, #ef805e);
-    /* border-radius: 10px; */
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    width: 60%;
-    transition: width 0.3s ease-in-out;
-}
-
-.icon {
-    margin-left: 20px;
-    color: gray;
-}
-
-.large_button {
-    width: 100%;
+    overflow-y: auto;
+  }
+  
+  .list_item {
+    padding: 5px 10px;
+    border: 1px solid #b0b0b0;
+    border-radius: 30px;
+    list-style-type: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #b0b0b0;
+  }
+  
+  .list_item_active {
+    color: #ff6b6b;
+    border-color: #ff6b6b;
+  }
+  
+  .selected {
+    border: 1px solid #ff6b6b;
+    color: #ff6b6b;
+    width: calc(100% / 3 - 20px);
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 40px;
+    list-style-type: none;
+    text-align: center;
+    font-size: x-large;
+  }
+  
+  .large_button {
     height: 40px;
-    border-radius: 26px;
+    width: 100%;
+    margin-top: auto;
+    font-size: 18px;
     background-image: linear-gradient(to right, #e7407d, #ef805e);
     color: white;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
-    display: block;
-    margin-top: auto;
-}
-
-.disabled_large_button {
-    width: 100%;
-    height: 40px;
-    font-size: 18px;
-    font-weight: bold;
-    border: none;
     border-radius: 26px;
+    border: none;
+    font-weight: 500;
+  }
+  
+  .large_button:focus {
+    outline: none;
+  }
+  
+  /* .disabled_large_button {
+    display: block;
+    width: 65%;
+    padding: 20px;
+    font-size: xx-large;
+    border: none;
+    border-radius: 20px;
     background-color: #f1f1f1;
     color: white;
     text-align: center;
     text-decoration: none;
-}
-
-.Link{
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-    width: 100%;
-  }
-
-.group{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0px 30px 40px 30px;
-}
->>>>>>> Stashed changes
+  } */
