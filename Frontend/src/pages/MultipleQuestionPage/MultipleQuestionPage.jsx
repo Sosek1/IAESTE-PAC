@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import classes from "./MultipleQuestionPage.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 const MultipleQuestionPage = () => {
@@ -22,8 +22,11 @@ const MultipleQuestionPage = () => {
       ]);
     
       const [counter, setCounter] = useState(0);
-    
-      const wordClickHanlder = (obj) => {
+      const [isContinueDisabled, setIsContinueDisabled] = useState(true);
+      
+      useEffect(() => {setIsContinueDisabled(counter === 0);}, [counter]);
+
+    const wordClickHanlder = (obj) => {
         const copiedList = [...randomWords];
         const clickedWord = copiedList.find((item) => item.text == obj.text);
         console.log(clickedWord.marked);
@@ -43,20 +46,6 @@ const MultipleQuestionPage = () => {
             setCounter((prev) => prev - 1);
         }
         setRandomWords(copiedList);
-        /*if (counter === 5) {
-          if (clickedWord.marked) {
-            clickedWord.marked == false;
-            setCounter((prev) => prev - 1);
-          } else {
-            clickedWord.marked == true;
-          }}
-
-          if (clickedWord.marked) {
-            setCounter((prev) => prev + 1);
-          }
-          if (!clickedWord.marked) {
-            setCounter((prev) => prev - 1);
-          }setRandomWords(copiedList);*/
         };
       
         return (
@@ -72,29 +61,34 @@ const MultipleQuestionPage = () => {
                 color: "#b0b0b0",
               }}
             ></ChevronLeftIcon>
-            <header className={classes.head}>
-              <h1 className={classes.title}>Passions</h1>
-              <p className={classes.text}>
-                Let everyone know what you're passionate about,<br></br> by adding it
-                to your profile.
-              </p>
-            </header>
-            <ul className={classes.list}>
-              {randomWords.map((word, index) => (
-                <li
-                  className={`${classes.list_item} ${
-                    word.marked ? classes.list_item_active : ""
-                  } `}
-                  key={index}
-                  onClick={() => wordClickHanlder(word)}
-                >
-                  {word.text}
-                </li>
-              ))}
-            </ul>
-            <button
-              className={classes.large_button}
-            >{`Kontynuuj ${counter}/5`}</button>
+            <section className={classes.body}>
+                <header className={classes.head}>
+                    <h1 className={classes.title}>Passions</h1>
+                </header>
+                <p className={classes.text}>
+                    Let everyone know what you're passionate about,<br></br> by adding it
+                    to your profile.
+                </p>
+                <ul className={classes.list}>
+                {randomWords.map((word, index) => (
+                    <li
+                    className={`${classes.list_item} ${
+                        word.marked ? classes.list_item_active : ""
+                    } `}
+                    key={index}
+                    onClick={() => wordClickHanlder(word)}
+                    >
+                        {word.text}
+                    </li>
+                ))}
+                </ul>
+            </section>
+            <Link to="/singleQuestion" className={classes.Link}>  
+                <button className={counter === 0 ? classes.disabled_large_button : classes.large_button} 
+                disabled={isContinueDisabled}>
+                    {`Kontynuuj ${counter}/5`}
+                </button>
+            </Link>
           </main>
         );};
 
