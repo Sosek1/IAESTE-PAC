@@ -1,36 +1,60 @@
 .SingleQuestionPage {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     align-items: center; 
     justify-content: flex-start;
-    
+    padding-bottom: 20px;
 }
 .SingleQuestionPage img{
     height: 47px;
 }
 .SingleQuestionPage header{
+    width: 100%;
     text-align: left;
-    padding-top: 15%;
-    padding-left: 20%;
+    padding-top: 20%;
+    padding-left: 25%;
     display:flex;
 }
 
+.Link{
+    margin-top: auto;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
 .SubmitAnswer{
-    width: 80%;
-    border-radius: 26px;
     height: 40px;
+    width: 70%;
+    margin-top: auto;
+    font-size: 18px;
     background-image: linear-gradient(to right, #e7407d, #ef805e);
     color: white;
-    font-weight: bold;
+    border-radius: 26px;
     border: none;
+    font-weight: 500;
+    text-decoration: none;
     display: block;
-    position: absolute;
-    bottom: 10px;
-    left:10%;
-    text-align: center;
-
-    
 }
+
+.SubmitAnswerDisabled{
+    height: 40px;
+    width: 70%;
+    margin-top: auto;
+    font-size: 18px;
+    background-color: #b0b0b0;
+    color: white;
+    border-radius: 26px;
+    border: none;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+}
+
 .proggresBar{
     width: 100%;
     height: 5px;
@@ -47,43 +71,47 @@
     width: 50%;
 }
 
+.Answers{
+    width: 70%;
+    margin-top: 70px;
+}
+
 .SingleQuestionPage ul{
     list-style-type: none;
-    max-width: 100%;
+    width: 100%;
     overflow-y: auto;
     gap: 15px;   
     display: flex;
-    position: relative;
-    padding-left: 23%;
-    padding-top: 20%;
+    justify-content: center;
     flex-direction: column; 
-    margin-bottom: 20px;
+    margin-right: 0;
 }
 
 .Deactive{
-    box-sizing: border-box;
-    border: 1px solid #B0B0B0;
-    border-radius: 25px;
+    padding: 10px 10px;
     width: auto;
-    max-width: 70%;
-    align-items: center;
-    padding: 20px;
-    font-size: large;
-    font-weight: bold;
+    border: 1px solid #b0b0b0;
+    border-radius: 30px;
+    list-style-type: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: #b0b0b0;
 }
 
 .Active{
     box-sizing: border-box;
     border: 1px solid;
-    border-color: #e7407d;
-    border-radius: 25px;
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+    border-radius: 30px;
     width: auto;
-    max-width: 70%;
     align-items: center;
-    padding: 20px;
+    padding: 10px 10px;
     font-size: large;
     font-weight: bold;
 }
+
 .backButton{
     border:none;
     background-color: transparent;

@@ -1,7 +1,8 @@
 import classes from "./SingleQuestionPage.module.css";
 import logo from "../../assets/tinder-logo-red.png";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import { Link } from "react-router-dom";
 
 const answersArray = ["Man", "Woman", "Answer3", "Answer4"];
 const SingleQuestionPage = () => {
@@ -12,10 +13,30 @@ const SingleQuestionPage = () => {
 
   const [isClicked, setClicked] = useState([false, false, false, false]);
 
+  const [counter, setCounter] = useState(0);
+  const [isContinueDisabled, setIsContinueDisabled] = useState(true);
+  
+  useEffect(() => {
+    console.log(counter);
+    if(counter === 0)
+      setIsContinueDisabled(true);
+    if(counter === 1)
+    setIsContinueDisabled(false);
+    console.log(isContinueDisabled);
+  });
+
   const changeAnswerHandler = (i) => {
     let checkArray = [false, false, false, false];
     for (let j = 0; j < isClicked.length; j++) {
-      if (j == i) checkArray[j] = !isClicked[j];
+      if (j == i){
+        checkArray[j] = !isClicked[j];
+        if(checkArray[j]){
+          setCounter(1);
+        }else{
+          setCounter(0);
+        }
+        break;
+      }
     }
     setClicked(checkArray);
   };
@@ -27,9 +48,11 @@ const SingleQuestionPage = () => {
           <div className={classes.proggresBarFill}></div>
         </div>
         <header>
-          <button type="button" className={classes.backButton}>
-            <ChevronLeftIcon style={{ fontSize: "60px", color: "gray" }} />
-          </button>
+          <Link to="/multipleQuestion" className={classes.linkBack}>
+            <button type="button" className={classes.backButton}>
+              <ChevronLeftIcon style={{ fontSize: "60px", color: "gray" }} />
+            </button>
+          </Link>
           <h1 className={classes.Question}>I am a</h1>
         </header>
         <section className={classes.Answers}>
@@ -46,9 +69,20 @@ const SingleQuestionPage = () => {
             >
               {answersArray[1]}
             </li>
+            <li
+              className={isClicked[2] ? classes.Active : classes.Deactive}
+              onClick={() => changeAnswerHandler(2)}
+            >
+              {answersArray[2]}
+            </li>
           </ul>
         </section>
-        <button className={classes.SubmitAnswer}>Continue</button>
+        <Link to="/saveMail" className={classes.Link}>  
+          <button className={counter === 1 ? classes.SubmitAnswer : classes.SubmitAnswerDisabled}
+          disabled={isContinueDisabled}>
+              Kontynuuj
+          </button>
+        </Link>
       </main>
     </>
   );
