@@ -26,20 +26,32 @@ const MultipleQuestionPage = () => {
       
       useEffect(() => {setIsContinueDisabled(counter === 0);}, [counter]);
 
-    const wordClickHanlder = (obj) => {
+      const wordClickHanlder = (obj) => {
         const copiedList = [...randomWords];
         const clickedWord = copiedList.find((item) => item.text == obj.text);
-        console.log(clickedWord.marked);
-        
+
         if(counter < 5){
           if(!clickedWord.marked){
             clickedWord.marked = !clickedWord.marked;
+            const last = copiedList.find((item) => item.lastMarked === true);
+            if(last){
+              last.lastMarked = false;
+            }
+            clickedWord.lastMarked = true;
             setCounter((prev) => prev + 1);
           }
           else{
             clickedWord.marked = !clickedWord.marked;
             setCounter((prev) => prev - 1);
           }
+        }
+        else if(counter === 5 && !clickedWord.marked){
+          const last = copiedList.find((item) => item.lastMarked === true);
+          last.lastMarked = false;
+          last.marked = false;
+          clickedWord.marked = !clickedWord.marked;
+          clickedWord.lastMarked = true;
+          console.log('Yo');
         }
         else if(counter > 0 && clickedWord.marked){
             clickedWord.marked = !clickedWord.marked;
