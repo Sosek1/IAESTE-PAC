@@ -26,9 +26,24 @@ const MultipleQuestionPage = () => {
       const wordClickHanlder = (obj) => {
         const copiedList = [...randomWords];
         const clickedWord = copiedList.find((item) => item.text == obj.text);
-        clickedWord.marked = !clickedWord.marked;
-    
-        if (counter === 5) {
+        console.log(clickedWord.marked);
+        
+        if(counter < 5){
+          if(!clickedWord.marked){
+            clickedWord.marked = !clickedWord.marked;
+            setCounter((prev) => prev + 1);
+          }
+          else{
+            clickedWord.marked = !clickedWord.marked;
+            setCounter((prev) => prev - 1);
+          }
+        }
+        else if(counter > 0 && clickedWord.marked){
+            clickedWord.marked = !clickedWord.marked;
+            setCounter((prev) => prev - 1);
+        }
+        setRandomWords(copiedList);
+        /*if (counter === 5) {
           if (clickedWord.marked) {
             clickedWord.marked == false;
             setCounter((prev) => prev - 1);
@@ -41,7 +56,7 @@ const MultipleQuestionPage = () => {
           }
           if (!clickedWord.marked) {
             setCounter((prev) => prev - 1);
-          }setRandomWords(copiedList);
+          }setRandomWords(copiedList);*/
         };
       
         return (
