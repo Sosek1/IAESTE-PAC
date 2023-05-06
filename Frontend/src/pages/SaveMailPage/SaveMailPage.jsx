@@ -1,8 +1,7 @@
 // @ts-ignore
 import classes from "./SaveMailPage.module.css";
-
-import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SaveMailPage = () => {
   const [buttonActive, setButtonActive] = useState(false);
@@ -16,7 +15,6 @@ const SaveMailPage = () => {
     event.preventDefault();
 
     //gdzies to wyslemy
-
     setEmail("");
   };
 
@@ -35,9 +33,11 @@ const SaveMailPage = () => {
             type="text"
             placeholder="Enter email"
           />
-          <button type="submit" className={classes.sendBottomColor}>
-            Send
-          </button>
+          <Link to="/theend" style={{ textDecoration: "none" }}>
+            <button type="submit" className={classes.sendBottomColor}>
+              Send
+            </button>
+          </Link>
         </form>
       </section>
     </main>

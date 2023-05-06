@@ -15,24 +15,22 @@ const SingleQuestionPage = () => {
 
   const [counter, setCounter] = useState(0);
   const [isContinueDisabled, setIsContinueDisabled] = useState(true);
-  
+
   useEffect(() => {
     console.log(counter);
-    if(counter === 0)
-      setIsContinueDisabled(true);
-    if(counter === 1)
-    setIsContinueDisabled(false);
+    if (counter === 0) setIsContinueDisabled(true);
+    if (counter === 1) setIsContinueDisabled(false);
     console.log(isContinueDisabled);
   });
 
   const changeAnswerHandler = (i) => {
     let checkArray = [false, false, false, false];
     for (let j = 0; j < isClicked.length; j++) {
-      if (j == i){
+      if (j == i) {
         checkArray[j] = !isClicked[j];
-        if(checkArray[j]){
+        if (checkArray[j]) {
           setCounter(1);
-        }else{
+        } else {
           setCounter(0);
         }
         break;
@@ -77,10 +75,16 @@ const SingleQuestionPage = () => {
             </li>
           </ul>
         </section>
-        <Link to="/saveMail" className={classes.Link}>  
-          <button className={counter === 1 ? classes.SubmitAnswer : classes.SubmitAnswerDisabled}
-          disabled={isContinueDisabled}>
-              Kontynuuj
+        <Link to="/profiles" className={classes.Link}>
+          <button
+            className={
+              counter === 1
+                ? classes.SubmitAnswer
+                : classes.SubmitAnswerDisabled
+            }
+            disabled={isContinueDisabled}
+          >
+            Kontynuuj
           </button>
         </Link>
       </main>

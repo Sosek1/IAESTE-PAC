@@ -1,0 +1,35 @@
+.sticker {
+  width: 120px;
+  height: 60px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid;
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 5px;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.like {
+  top: 120px;
+  left: 20px;
+  transform: rotate(-10deg);
+  border-color: #7cfda3;
+  color: #7cfda3;
+}
+
+.nope {
+  top: 120px;
+  right: 20px;
+  transform: rotate(10deg);
+  border-color: #ff4458;
+  color: #ff4458;
+}
+
+.activeSticker {
+  opacity: 0.8;
+}

@@ -1,0 +1,7 @@
+.profilePagecontainer {
+  height: 100vh;
+  padding-bottom: 10px;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+}

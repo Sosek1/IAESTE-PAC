@@ -1,0 +1,32 @@
+.iconLayerWrapper {
+  height: auto;
+  width: 100%;
+  position: fixed;
+  bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  z-index: 3;
+}
+
+.iconBox {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 40px;
+}
+
+.borderRed {
+  border-color: #ff4458;
+}
+
+.borderGreen {
+  border-color: #7cfda3;
+}
+
+.iconStyles {
+  font-size: 100px;
+}

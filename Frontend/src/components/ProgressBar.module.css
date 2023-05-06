@@ -1,0 +1,21 @@
+.progresBar {
+  height: 4px;
+  width: 90%;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.littleBar {
+  height: 100%;
+  border-radius: 5px;
+  background-color: #50596586;
+}
+
+.littleBarActive {
+  background-color: #fff;
+}

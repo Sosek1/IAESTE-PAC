@@ -1,0 +1,81 @@
+.information {
+  width: 90%;
+  position: absolute;
+  bottom: 120px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.nameAgeWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.nameAgeWrapper h2 {
+  font-size: 36px;
+  font-weight: 500;
+  margin-right: 10px;
+  color: #fff;
+  text-shadow: black 1px 1px 1px;
+}
+
+.nameAgeWrapper h3 {
+  font-size: 30px;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: black 1px 1px 1px;
+}
+
+.nameAgeWrapper img {
+  width: 35px;
+  height: 30px;
+}
+
+.information p {
+  width: 80%;
+  font-size: 18px;
+  font-weight: 400px;
+  color: #fff;
+}
+
+.onlineDistance {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.onlineDistance p {
+  font-size: 18px;
+  color: #fff;
+}
+
+.onlineDistanceWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.dot {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+  border-radius: 15px;
+  background-color: #7cfda3;
+}
+
+.interestsWrapper {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style-type: none;
+}
+
+.interest {
+  background-color: #7c8591d5;
+  color: #fff;
+  font-size: 16px;
+  padding: 4px 12px;
+  /* border: 2px solid #fff; */
+  border-radius: 100px;
+}

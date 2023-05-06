@@ -46,6 +46,10 @@
 .SaveMailPage input:focus {
   outline: none;
 }
+
+.SaveMailPage a {
+  margin-top: auto;
+}
 .sendBottomColor {
   width: 100%;
   border-radius: 26px;
