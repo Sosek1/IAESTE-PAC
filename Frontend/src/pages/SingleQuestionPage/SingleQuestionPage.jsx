@@ -4,61 +4,58 @@ import { useState, useEffect } from "react";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { Link, useHref } from "react-router-dom";
 
-
-
 const SingleQuestionPage = () => {
-
-
   const [isClicked, setClicked] = useState([false, false, false, false]);
   const [questionIndex, setQuestionIndex] = useState(0);
   const [counter, setCounter] = useState(0);
   const [isContinueDisabled, setIsContinueDisabled] = useState(true);
 
-  const questionData=[
+  const questionData = [
     {
-      question:"Jestem:",
-      answers:["Mężczyzną","Kobietą","Helikopterem bojowym"]
+      question: "Jestem:",
+      answers: ["Mężczyzną", "Kobietą", "Helikopterem bojowym"],
     },
     {
-      question:"Pytanie dwa:",
-      answers:["odp1","odp2","odp3","odp4"]
+      question: "Pytanie dwa:",
+      answers: ["odp1", "odp2", "odp3", "odp4"],
     },
     {
-      question:"Pytanie trzy:",
-      answers:["odp1","odp2"]
-    }
-      
+      question: "Pytanie trzy:",
+      answers: ["odp1", "odp2"],
+    },
   ];
-  const ShowQuestion=(questionData, questionIndex)=>{
+  const ShowQuestion = (questionData, questionIndex) => {
     return (
       <>
-        <h1 className={classes.Question}>{questionData[questionIndex].question}</h1>
+        <h1 className={classes.Question}>
+          {questionData[questionIndex].question}
+        </h1>
       </>
-    )
-  }
-//Redux (store) może pomoże przekazywaniem zmiennych 
-  const ShowAnswers=(questionData, questionIndex)=>{
-    return(
+    );
+  };
+  //Redux (store) może pomoże przekazywaniem zmiennych
+  const ShowAnswers = (questionData, questionIndex) => {
+    return (
       <>
-        {questionData[questionIndex].answers.map((item, index)=>(
-            <li
+        {questionData[questionIndex].answers.map((item, index) => (
+          <li
             className={isClicked[index] ? classes.Active : classes.Deactive}
             onClick={() => changeAnswerHandler(index)}
-            >
+          >
             {item}
           </li>
         ))}
       </>
-    )
-  }
-  
-  const newQuestion=()=>{
-    if(questionIndex<3){
-    setQuestionIndex(questionIndex+1);
+    );
+  };
+
+  const newQuestion = () => {
+    if (questionIndex < 3) {
+      setQuestionIndex(questionIndex + 1);
     }
-    setClicked([false,false,false,false])
+    setClicked([false, false, false, false]);
     setCounter(0);
-  }
+  };
 
   useEffect(() => {
     console.log(counter);
@@ -95,26 +92,33 @@ const SingleQuestionPage = () => {
               <ChevronLeftIcon style={{ fontSize: "60px", color: "gray" }} />
             </button>
           </Link>
-          {ShowQuestion(questionData,questionIndex)}
+          {ShowQuestion(questionData, questionIndex)}
         </header>
         <section className={classes.Answers}>
-        <ul>
-         {ShowAnswers(questionData,questionIndex)}
-        </ul>
+          <ul>{ShowAnswers(questionData, questionIndex)}</ul>
         </section>
-        {/*wymyślić jak przejść do następnej strony, i zablokować wyjście poza tablice*/}
-         {/* <Link to="/profiles" className={classes.Link}> */}
-          <button onClick={newQuestion}
-            className={
-              counter === 1
-                ? classes.SubmitAnswer
-                : classes.SubmitAnswerDisabled
+
+        <button
+          onClick={() => {
+            if (questionIndex === questionData.length - 1) {
+              console.log("Navigate to profiles");
+            } else {
+              newQuestion();
             }
-            disabled={isContinueDisabled}
-          >
-            Kontynuuj
-          </button>
-        {/* </Link>  */}
+          }}
+          className={
+            counter === 1 ? classes.SubmitAnswer : classes.SubmitAnswerDisabled
+          }
+          disabled={isContinueDisabled}
+        >
+          {questionIndex === questionData.length - 1 ? (
+            <Link to="/profiles" className={classes.Link}>
+              Kontynuuj
+            </Link>
+          ) : (
+            "Kontynuuj"
+          )}
+        </button>
       </main>
     </>
   );
