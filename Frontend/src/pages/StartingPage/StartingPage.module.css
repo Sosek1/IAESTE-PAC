@@ -1,4 +1,4 @@
-.StartingPage {
+.startingPage {
   background-image: linear-gradient(to top right, #e7407d, #ef805e);
   height: 100vh;
   display: flex;
@@ -6,17 +6,17 @@
   justify-content: center;
 }
 
-.StartingPage header {
+.startingPage header {
   display: flex;
   align-items: center;
 }
 
-.StartingPage h1 {
+.startingPage h1 {
   font-size: 36px;
   color: white;
   margin-left: 5px;
 }
 
-.StartingPage img {
+.startingPage img {
   height: 45px;
 }

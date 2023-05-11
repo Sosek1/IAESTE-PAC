@@ -6,77 +6,60 @@ import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArro
 import { colors } from "@mui/material";
 
 const InstructionPage = () => {
+  const styledIcon = (
+    <KeyboardDoubleArrowRightIcon
+      style={{
+        fontSize: "26px",
+        color: "#e7407d",
+        marginRight: "5px",
+        marginTop: "1px",
+      }}
+    />
+  );
+
+  const instructionData = [
+    {
+      title: "Struktura IAESTE",
+      description:
+        "IAESTE jest podzielone na 6 grup roboczych. Każdy kandydat musi wybrać przy rekrutacji, do której grupy chce dołączyć",
+      icon: styledIcon,
+    },
+    {
+      title: "Grupy robocze",
+      description: "IT, Grafika, HR, Pr, I&O, JFR",
+      icon: styledIcon,
+    },
+    {
+      title: "Nasza aplikacja",
+      description:
+        "IAESTinder to aplikacja, dzięki której dowiesz się, do której grupy roboczej pasujesz",
+      icon: styledIcon,
+    },
+    {
+      title: "Twoja aktywność",
+      description:
+        "Po kliknięciu kontynuuj, odpowiesz na kilka pytań a następie poznasz grupy robocze przeglądając ich profile i wybierzesz te, które ci się spodobają",
+      icon: styledIcon,
+    },
+  ];
+
   return (
-    <main className={classes.InstructionPage}>
+    <main className={classes.instructionPage}>
       <section>
         <header>
           <img src={logo} />
-          <h2>Welcome to IAESTinder</h2>
-          <h4></h4>
+          <h1>Witamy w IAESTinder</h1>
         </header>
         <ul>
-          <li>
-            <div>
-              <KeyboardDoubleArrowRightIcon
-                style={{
-                  fontSize: "26px",
-                  color: "red",
-                  marginRight: "5px",
-                  marginTop: "1px",
-                }}
-              />
-              <h3>O co chodzi?</h3>
-            </div>
-            <span>
-              IAESTE jest podzielone na 6 grup roboczych. Każdy przyszły członek
-              musi stanąć przed wyborem jednej z nich
-            </span>
-          </li>
-          <li>
-            <div>
-              <KeyboardDoubleArrowRightIcon
-                style={{
-                  fontSize: "26px",
-                  color: "red",
-                  marginRight: "5px",
-                  marginTop: "1px",
-                }}
-              />
-              <h3>Jakie są grupy robocze?</h3>
-            </div>
-            <span>JFR, PR, HR, I&O, IT i Grafika</span>
-          </li>
-          <li>
-            <div>
-              <KeyboardDoubleArrowRightIcon
-                style={{
-                  fontSize: "26px",
-                  color: "red",
-                  marginRight: "5px",
-                  marginTop: "1px",
-                }}
-              />
-              <h3>Jak to działa?</h3>
-            </div>
-            <span>
-              Na podstawie twoich wyborów IAESTinder wksaże Ci grupę do której
-              najbardziej pasujesz
-            </span>
-          </li>
-          <li>
-            <div>
-              <KeyboardDoubleArrowRightIcon
-                style={{
-                  fontSize: "26px",
-                  color: "red",
-                  marginRight: "5px",
-                  marginTop: "1px",
-                }}
-              />
-              <h3>Co dalej?</h3>
-            </div>
-            <span>Kliknij kontynuuj i do roboty. Udanych matchów!</span>
-          </li>
+          {instructionData.map((item) => (
+            <li>
+              <div>
+                {item.icon}
+                <h3>{item.title}</h3>
+              </div>
+              <p>{item.description}</p>
+            </li>
+          ))}
         </ul>
       </section>
       <Link to="/multipleQuestion">
@@ -84,7 +67,6 @@ const InstructionPage = () => {
       </Link>
     </main>
   );
-  <p>Instruction</p>;
 };
 
 export default InstructionPage;

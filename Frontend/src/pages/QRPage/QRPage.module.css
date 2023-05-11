@@ -1,32 +1,48 @@
-.QRPage{
-    background-image: linear-gradient(to top right, #e7407d, #ef805e);
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    
-} 
-
-.QRPage header{
-    display: flex;
-    align-items: center;
+.qrPage {
+  background-image: linear-gradient(to top right, #e7407d, #ef805e);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
-.QRPage h1{
-    color: white;
-} 
-
-.QRPage p{
-    color: white;
-    align-items: right;
+.emptyWrapper {
+  width: 100%;
+  height: 250px;
 }
 
-.QRPage img{
-    height: 32px;
+.qrPage header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.qrPage img {
+  height: 45px;
+}
 
-.QRPage2 img{
-    height: 250px;
+.qrPage h1 {
+  font-size: 36px;
+  color: #fff;
+  margin-left: 5px;
+}
+
+.qrWrapper {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qrPage p {
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.grPage canvas {
+  height: 100%;
+  width: 100%;
 }

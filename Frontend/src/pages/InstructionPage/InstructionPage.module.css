@@ -1,4 +1,4 @@
-.InstructionPage {
+.instructionPage {
   background-color: white;
   height: 100vh;
   padding: 40px;
@@ -8,69 +8,61 @@
   justify-content: flex-start;
 }
 
-.InstructionPage section {
-  margin: auto 0;
-}
-
-.InstructionPage img {
-  height: 45px;
-}
-
-.InstructionPage header {
+.instructionPage header {
   text-align: center;
   width: 100%;
   margin-bottom: 40px;
 }
 
-.InstructionPage h2 {
+.instructionPage section {
+  margin: auto 0;
+}
+
+.instructionPage img {
+  height: 45px;
+}
+
+.instructionPage h1 {
   font-size: 24px;
 }
 
-.InstructionPage h3 {
-  color: darkslategrey;
-}
-
-.InstructionPage h4 {
-  font-size: 18px;
-  color: gray;
-  font-weight: normal;
-}
-
-.InstructionPage ul {
+.instructionPage ul {
   width: 100%;
+  margin: 0;
   list-style: none;
 }
 
-.InstructionPage li {
+.instructionPage li {
   margin-bottom: 20px;
 }
 
-.InstructionPage span {
-  color: grey;
+.instructionPage li div {
+  display: flex;
 }
 
-.InstructionPage a {
+.instructionPage h3 {
+  font-size: 18px;
+  color: rgb(88, 86, 86);
+}
+.instructionPage p {
+  font-size: 16px;
+  color: gray;
+}
+
+.instructionPage a {
   text-decoration: none;
   width: 100%;
 }
 
-.InstructionPage button {
+.instructionPage button {
   width: 100%;
   height: 40px;
   border-radius: 26px;
   background-image: linear-gradient(to right, #e7407d, #ef805e);
   color: white;
   font-size: 18px;
-  font-weight: bold;
+  font-weight: 600;
   border: none;
   margin-top: auto;
   text-decoration: none;
-}
-
-.InstructionPage li div {
-  display: flex;
-}
-
-.InstructionPage ul {
-  margin: 0;
 }

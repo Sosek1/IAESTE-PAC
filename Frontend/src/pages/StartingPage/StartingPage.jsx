@@ -5,7 +5,7 @@ import logo from "../../assets/logo-white3.png";
 const StartingPage = () => {
   return (
     <Link to="QR" style={{ textDecoration: "none" }}>
-      <main className={classes.StartingPage}>
+      <main className={classes.startingPage}>
         <header>
           <img src={logo} />
           <h1>IAESTinder</h1>
