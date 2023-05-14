@@ -5,20 +5,18 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 
 const MultipleQuestionPage = () => {
     const [randomWords, setRandomWords] = useState([
-        { text: "Giraffe", marked: false, lastMarked: false },
-        { text: "Penguin", marked: false, lastMarked: false },
-        { text: "Cinnamon", marked: false, lastMarked: false },
-        { text: "Banana", marked: false, lastMarked: false },
-        { text: "Thunder", marked: false, lastMarked: false },
-        { text: "Lighthouse", marked: false, lastMarked: false },
-        { text: "Lavender", marked: false, lastMarked: false },
-        { text: "Honeycomb", marked: false, lastMarked: false },
-        { text: "Frosting", marked: false, lastMarked: false },
-        { text: "Sapphire", marked: false, lastMarked: false },
-        { text: "Butterfly", marked: false, lastMarked: false },
-        { text: "Pluto", marked: false, lastMarked: false },
-        { text: "Galaxy", marked: false, lastMarked: false },
-        { text: "Mushroom", marked: false, lastMarked: false },
+        { text: "Rower", marked: false, lastMarked: false },
+        { text: "Kino", marked: false, lastMarked: false },
+        { text: "Gotowanie", marked: false, lastMarked: false },
+        { text: "Podróże", marked: false, lastMarked: false },
+        { text: "Wspinaczka", marked: false, lastMarked: false },
+        { text: "Planszówki", marked: false, lastMarked: false },
+        { text: "Gry", marked: false, lastMarked: false },
+        { text: "Konie", marked: false, lastMarked: false },
+        { text: "Kodowaie", marked: false, lastMarked: false },
+        { text: "Książki", marked: false, lastMarked: false },
+        { text: "Śpiewanie", marked: false, lastMarked: false },
+        { text: "Sporty drużynowe", marked: false, lastMarked: false },
       ]);
     
       const [counter, setCounter] = useState(0);
@@ -61,10 +59,58 @@ const MultipleQuestionPage = () => {
         };
       
         return (
-          <main className={classes.container}>
-            <div className={classes.progress_bar_container}>
+        <>          
+          <div className={classes.proggresBar}>
+            <div className={classes.proggresBarFill}></div>
+          </div>
+          <main className={classes.MultipleQuestionPage}>
+            <header className={classes.head}>
+              <Link to="/instruction" className={classes.linkBack}>
+                <button type="button" className={classes.backButton}>
+                  <ChevronLeftIcon style={{
+                    marginTop: "20px",
+                    marginBottom: "15px",
+                    fontSize: "50px",
+                    color: "#b0b0b0",
+                  }} />
+                </button>
+              </Link>
+              <h1 className={classes.title}>
+                  Pasje
+              </h1>
+              <h3 className={classes.titleDescription}>
+                  Opowiedz nam o nich!
+              </h3>
+            </header>
+            <section className={classes.Answers}>
+              <ul>{randomWords.map((word, index) => (
+                    <li
+                    className={`${classes.Deactive} ${
+                        word.marked ? classes.Active : ""
+                    } `}
+                    key={index}
+                    onClick={() => wordClickHanlder(word)}
+                    >
+                        {word.text}
+                    </li>
+                ))}</ul>
+            </section>
+            <Link to="/singleQuestion" className={classes.Link}>  
+                <button className={counter === 0 ? classes.SubmitAnswerDisabled : classes.SubmitAnswer} 
+                disabled={isContinueDisabled}>
+                    {`Kontynuuj ${counter}/5`}
+                </button>
+            </Link>
+          </main>
+          </>
+        );};
+
+        export default MultipleQuestionPage;
+
+        /* <div className={classes.progress_bar_container}>
               <div className={classes.progress_bar_fill}></div>
-            </div>
+          </div>
+          <main className={classes.container}>
             <ChevronLeftIcon
               style={{
                 marginTop: "20px",
@@ -75,11 +121,10 @@ const MultipleQuestionPage = () => {
             ></ChevronLeftIcon>
             <section className={classes.body}>
                 <header className={classes.head}>
-                    <h1 className={classes.title}>Passions</h1>
+                    <h1 className={classes.title}>Pasje</h1>
                 </header>
                 <p className={classes.text}>
-                    Let everyone know what you're passionate about,<br></br> by adding it
-                    to your profile.
+                    Opowiedz nam o swoich pasjach!
                 </p>
                 <ul className={classes.list}>
                 {randomWords.map((word, index) => (
@@ -101,7 +146,4 @@ const MultipleQuestionPage = () => {
                     {`Kontynuuj ${counter}/5`}
                 </button>
             </Link>
-          </main>
-        );};
-
-        export default MultipleQuestionPage;
+          </main>*/

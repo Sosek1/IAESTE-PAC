@@ -12,8 +12,8 @@ const SingleQuestionPage = () => {
 
   const questionData = [
     {
-      question: "Jestem:",
-      answers: ["Mężczyzną", "Kobietą", "Helikopterem bojowym"],
+      question: "Co jest w życiu najważniejsze?",
+      answers: ["Doświadczenie", "Pieniądze", "Rodzina", "Sława"],
     },
     {
       question: "Pytanie dwa:",
@@ -24,6 +24,7 @@ const SingleQuestionPage = () => {
       answers: ["odp1", "odp2"],
     },
   ];
+  
   const ShowQuestion = (questionData, questionIndex) => {
     return (
       <>
@@ -82,14 +83,19 @@ const SingleQuestionPage = () => {
 
   return (
     <>
-      <main className={classes.SingleQuestionPage}>
-        <div className={classes.proggresBar}>
+    <div className={classes.proggresBar}>
           <div className={classes.proggresBarFill}></div>
-        </div>
+    </div>
+      <main className={classes.SingleQuestionPage}>
         <header>
           <Link to="/multipleQuestion" className={classes.linkBack}>
             <button type="button" className={classes.backButton}>
-              <ChevronLeftIcon style={{ fontSize: "60px", color: "gray" }} />
+              <ChevronLeftIcon style={{
+                marginTop: "20px",
+                marginBottom: "15px",
+                fontSize: "50px",
+                color: "#b0b0b0",
+              }} />
             </button>
           </Link>
           {ShowQuestion(questionData, questionIndex)}
@@ -97,7 +103,7 @@ const SingleQuestionPage = () => {
         <section className={classes.Answers}>
           <ul>{ShowAnswers(questionData, questionIndex)}</ul>
         </section>
-
+              
         <button
           onClick={() => {
             if (questionIndex === questionData.length - 1) {
@@ -111,7 +117,7 @@ const SingleQuestionPage = () => {
           }
           disabled={isContinueDisabled}
         >
-          {questionIndex === questionData.length - 1 ? (
+          {questionIndex === questionData.length - 1 && counter === 1 ? (
             <Link to="/profiles" className={classes.Link}>
               Kontynuuj
             </Link>

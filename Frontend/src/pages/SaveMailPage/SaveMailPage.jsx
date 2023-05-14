@@ -21,7 +21,7 @@ const SaveMailPage = () => {
   return (
     <main className={classes.SaveMailPage}>
       <section>
-        <h1 className={classes.header}>What's your email?</h1>
+        <h1 className={classes.header}>Zostaw nam kontakt!</h1>
         <p className={classes.paragraph}>
           Don't lose access to your account, verify your email.
         </p>
@@ -31,11 +31,11 @@ const SaveMailPage = () => {
             onChange={emailHandler}
             value={email}
             type="text"
-            placeholder="Enter email"
+            placeholder="Wpisz email"
           />
           <Link to="/theend" style={{ textDecoration: "none" }}>
             <button type="submit" className={classes.sendBottomColor}>
-              Send
+              Wyślij
             </button>
           </Link>
         </form>

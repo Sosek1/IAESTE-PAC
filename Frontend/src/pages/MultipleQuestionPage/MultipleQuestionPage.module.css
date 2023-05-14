@@ -1,28 +1,190 @@
-.progress_bar_container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 8px;
+.MultipleQuestionPage {
+  height: calc(100vh - 8px - 20px);
+  padding: 0px 50px 30px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.MultipleQuestionPage img {
+  height: 47px;
+}
+
+.MultipleQuestionPage header {
+  width: 100%;
+  text-align: left;
+  padding-top: 7vh;
+  display: flex;
+}
+
+.proggresBar {
+  width: 100%;
+  height: 8px;
+  background-color: white;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.proggresBarFill {
+  height: 100%;
+  background-image: linear-gradient(to top right, #e7407d, #ef805e);
+  border-end-end-radius: 10px;
+  border-start-end-radius: 10px;
+  width: 50%;
+}
+
+.progressBar1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 8px;
+  display: flex;
+  background-color: #f1f1f1;
+  overflow: hidden;
+}
+
+.progressBarFill1 {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: linear-gradient(to top right, #e7407d, #ef805e);
+  transition: width 0.3s ease-in-out;
+}
+
+.backButton {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: large;
+  display: flex;
+}
+
+.head{
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 50px;
+}
+
+.titleDescription{
+  margin-top: 1vh;
+  color: #726e6e;
+}
+
+.Answers {
+  width: 100%;
+}
+
+.MultipleQuestionPage ul {
+    margin-top: 5vh;
+    width: 90%;
+    max-height: 3500px;
     display: flex;
-    background-color: #f1f1f1;
-    overflow: hidden;
+    flex-wrap: wrap;
+    gap: 8px;
+    overflow-y: auto;
+}
+
+.Deactive {
+  padding: 2px 10px;
+  border: 1px solid #b0b0b0;
+  border-radius: 30px;
+  list-style-type: none;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #b0b0b0;
+}
+
+.Active {
+  padding: 2px 10px;
+  border: 1px solid #ff6b6b;
+  border-radius: 30px;
+  list-style-type: none;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ff6b6b;
+}
+
+.Link {
+  margin-top: auto;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.SubmitAnswer {
+  height: 40px;
+  width: 100%;
+  font-size: 18px;
+  background-image: linear-gradient(to right, #e7407d, #ef805e);
+  color: white;
+  border-radius: 26px;
+  border: none;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+  box-shadow: 0 4px 2px -2px gray;
+}
+
+.SubmitAnswerDisabled {
+  height: 40px;
+  width: 100%;
+  font-size: 18px;
+  background-color: #b0b0b0;
+  color: white;
+  border-radius: 26px;
+  border: none;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+  box-shadow: 0 4px 2px -2px gray;
+}
+
+
+
+/*
+.progressBar {
+  width: 100%;
+  height: 8px;
+  background-color: white;
+  margin-bottom: 20px;
+  overflow: hidden;
   }
   
-  .progress_bar_fill {
+  .progressBarFill {
     height: 100%;
-    width: 100%;
-    position: absolute;
     background-image: linear-gradient(to top right, #e7407d, #ef805e);
-  
+    border-end-end-radius: 10px;
+    border-start-end-radius: 10px;
+    width: 50%;
     transition: width 0.3s ease-in-out;
   }
   
-  .container {
+  .MultipleQuestionPage {
     height: 100vh;
     padding: 0px 30px 20px 30px;
     display: flex;
     flex-direction: column;
+  }
+
+  .backButton {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: large;
+    display: flex;
   }
 
   .body{
@@ -121,3 +283,4 @@
     text-decoration: none;
     color: white;
   }
+  */
