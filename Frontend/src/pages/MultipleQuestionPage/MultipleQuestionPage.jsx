@@ -107,43 +107,4 @@ const MultipleQuestionPage = () => {
 
         export default MultipleQuestionPage;
 
-        /* <div className={classes.progress_bar_container}>
-              <div className={classes.progress_bar_fill}></div>
-          </div>
-          <main className={classes.container}>
-            <ChevronLeftIcon
-              style={{
-                marginTop: "20px",
-                marginBottom: "15px",
-                fontSize: "50px",
-                color: "#b0b0b0",
-              }}
-            ></ChevronLeftIcon>
-            <section className={classes.body}>
-                <header className={classes.head}>
-                    <h1 className={classes.title}>Pasje</h1>
-                </header>
-                <p className={classes.text}>
-                    Opowiedz nam o swoich pasjach!
-                </p>
-                <ul className={classes.list}>
-                {randomWords.map((word, index) => (
-                    <li
-                    className={`${classes.list_item} ${
-                        word.marked ? classes.list_item_active : ""
-                    } `}
-                    key={index}
-                    onClick={() => wordClickHanlder(word)}
-                    >
-                        {word.text}
-                    </li>
-                ))}
-                </ul>
-            </section>
-            <Link to="/singleQuestion" className={classes.Link}>  
-                <button className={counter === 0 ? classes.disabled_large_button : classes.large_button} 
-                disabled={isContinueDisabled}>
-                    {`Kontynuuj ${counter}/5`}
-                </button>
-            </Link>
-          </main>*/
+  
