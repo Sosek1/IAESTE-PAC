@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import QRCode from "qrcode";
 import { Link } from "react-router-dom";
 import classes from "./QRPage.module.css";
-import logo from "../../assets/logo-white3.png";
+import logo from "../../assets/tinder-logo-white.png";
 
 const QRpage = () => {
   const link = "https://www.youtube.com/watch?v=xvFZjo5PgG0&ab_channel=Duran";

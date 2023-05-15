@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import classes from "./StartingPage.module.css";
-import logo from "../../assets/logo-white3.png";
+import logo from "../../assets/tinder-logo-white.png";
 
 const StartingPage = () => {
   return (
