@@ -1,16 +1,17 @@
-.EndingPage{
-    background-image: linear-gradient(to top right, #e7407d, #ef805e);
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} 
-
-.EndingPage header{
-    display: flex;
-    align-items: center;
+.EndingPage {
+  background-image: linear-gradient(to top right, #e7407d, #ef805e);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.EndingPage h1{
-    color: white;
-} 
+.EndingPage header {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.EndingPage h1 {
+  color: white;
+}

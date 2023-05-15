@@ -1,4 +1,4 @@
-import mark from "../assets/verifiedMark.png";
+import mark from "../../assets/verifiedMark.png";
 import classes from "./Information.module.css";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 

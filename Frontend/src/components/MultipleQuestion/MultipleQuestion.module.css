@@ -1,0 +1,75 @@
+.multipleQuestionContainer {
+  height: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.multipleQuestionContainer h1 {
+  font-size: 40px;
+}
+
+.multipleQuestionContainer p {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: gray;
+}
+
+.multipleQuestionContainer ul {
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.multipleQuestionContainer li {
+  padding: 0 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 30px;
+  border: 1px solid #b0b0b0;
+  list-style-type: none;
+  color: #b0b0b0;
+}
+
+.multipleQuestionContainer .activeWord {
+  color: #ff6b6b;
+  border-color: #ff6b6b;
+}
+
+.selected {
+  width: calc(100% / 3 - 20px);
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #ff6b6b;
+  color: #ff6b6b;
+  border-radius: 40px;
+}
+
+.multipleQuestionContainer button {
+  min-height: 40px;
+  width: 100%;
+  margin-top: auto;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  border-radius: 26px;
+  border: none;
+  text-decoration: none;
+}
+
+.multipleQuestionContainer button:focus {
+  outline: none;
+}
+
+.activeButton {
+  background-image: linear-gradient(to right, #e7407d, #ef805e);
+}
+
+.disabledButton {
+  background-color: #f1f1f1;
+}

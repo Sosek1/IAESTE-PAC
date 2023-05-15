@@ -21,9 +21,10 @@ const SaveMailPage = () => {
   return (
     <main className={classes.SaveMailPage}>
       <section>
-        <h1 className={classes.header}>What's your email?</h1>
+        <h1 className={classes.header}>Podaj swój adres email</h1>
         <p className={classes.paragraph}>
-          Don't lose access to your account, verify your email.
+          Jeśli podasz nam adres email, skontaktujemy się z tobą gdy zacznie się
+          rekrutacja
         </p>
 
         <form onSubmit={sumbitFormHandler}>
@@ -31,11 +32,11 @@ const SaveMailPage = () => {
             onChange={emailHandler}
             value={email}
             type="text"
-            placeholder="Enter email"
+            placeholder="Podaj email"
           />
           <Link to="/theend" style={{ textDecoration: "none" }}>
             <button type="submit" className={classes.sendBottomColor}>
-              Send
+              Wyślij
             </button>
           </Link>
         </form>

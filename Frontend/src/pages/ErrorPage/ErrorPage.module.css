@@ -1,0 +1,27 @@
+.errorPage {
+  background-image: linear-gradient(to top right, #e7407d, #ef805e);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorPage header {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.errorPage h1 {
+  font-size: 36px;
+  color: white;
+  text-align: center;
+}
+.errorPage h2 {
+  font-size: 24px;
+  margin-top: 20px;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+}

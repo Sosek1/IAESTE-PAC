@@ -51,8 +51,8 @@ const InstructionPage = () => {
           <h1>Witamy w IAESTinder</h1>
         </header>
         <ul>
-          {instructionData.map((item) => (
-            <li>
+          {instructionData.map((item, index) => (
+            <li key={index}>
               <div>
                 {item.icon}
                 <h3>{item.title}</h3>
@@ -62,7 +62,7 @@ const InstructionPage = () => {
           ))}
         </ul>
       </section>
-      <Link to="/multipleQuestion">
+      <Link to="/questions">
         <button>Kontynuuj</button>
       </Link>
     </main>
