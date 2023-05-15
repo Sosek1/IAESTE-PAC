@@ -5,7 +5,7 @@ const TopBar = () => {
   return (
     <header className={classes.topBar}>
       <img src={logo} />
-      <h1>IAESTinder</h1>
+      <h1>IAESTE PAC</h1>
     </header>
   );
 };

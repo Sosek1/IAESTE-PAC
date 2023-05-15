@@ -22,7 +22,7 @@ const QRpage = () => {
         <div className={classes.emptyWrapper}></div>
         <header>
           <img src={logo} />
-          <h1>IAESTinder</h1>
+          <h1>IAESTE PAC</h1>
         </header>
         <div className={classes.qrWrapper}>
           <p>

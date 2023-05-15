@@ -32,7 +32,7 @@ const InstructionPage = () => {
     {
       title: "Nasza aplikacja",
       description:
-        "IAESTinder to aplikacja, dzięki której dowiesz się, do której grupy roboczej pasujesz",
+        "IAESTE PAC to aplikacja, dzięki której dowiesz się, do której grupy roboczej pasujesz",
       icon: styledIcon,
     },
     {
@@ -48,7 +48,7 @@ const InstructionPage = () => {
       <section>
         <header>
           <img src={logo} />
-          <h1>Witamy w IAESTinder</h1>
+          <h1>Witamy w IAESTE PAC</h1>
         </header>
         <ul>
           {instructionData.map((item, index) => (

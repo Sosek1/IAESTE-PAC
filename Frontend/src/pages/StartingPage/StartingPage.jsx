@@ -8,7 +8,7 @@ const StartingPage = () => {
       <main className={classes.startingPage}>
         <header>
           <img src={logo} />
-          <h1>IAESTinder</h1>
+          <h1>IAESTE PAC</h1>
         </header>
       </main>
     </Link>
