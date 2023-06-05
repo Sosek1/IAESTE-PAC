@@ -1,5 +1,5 @@
 import classes from "./SingleQuestionPage.module.css";
-import logo from "../../assets/tinder-logo-red.png";
+import logo from "../../assets/inne/tinder-logo-red.webp";
 import { useState, useEffect } from "react";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { Link, useHref } from "react-router-dom";

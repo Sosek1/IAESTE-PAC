@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import classes from "./MatchScreen.module.css";
-import match from "../../assets/match.png";
+import match from "../../assets/inne/match.webp";
 
 import ProgressBar from "./ProgressBar";
 

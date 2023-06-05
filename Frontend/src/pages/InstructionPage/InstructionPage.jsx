@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import classes from "./InstructionPage.module.css";
-import logo from "../../assets/tinder-logo-red.png";
+import logo from "../../assets/inne/tinder-logo-red.webp";
 import DoneIcon from "@mui/icons-material/Done";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { colors } from "@mui/material";
