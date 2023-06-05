@@ -1,39 +1,45 @@
 import classes from "./SingleQuestion.module.css";
 import { useState } from "react";
+import { useQuestions } from "../../store/questions-context";
 
 const SingleQuestion = (props) => {
-  const [clickedAnswer, setClickedAnswer] = useState([
-    false,
-    false,
-    false,
-    false,
-  ]);
-  const [anyAnswerClicked, setAnyAnswerClicked] = useState(false);
-  const [markedAnswer, setMarkedAnswer] = useState("");
+  // const [clickedAnswer, setClickedAnswer] = useState([
+  //   false,
+  //   false,
+  //   false,
+  //   false,
+  // ]);
+  // const [anyAnswerClicked, setAnyAnswerClicked] = useState(false);
+  // const [markedAnswer, setMarkedAnswer] = useState("");
+
+  const { questionState, onUpdateQuestions } = useQuestions();
 
   const changeAnswerHandler = (index) => {
     let checkArray = [false, false, false, false];
-    for (let j = 0; j < clickedAnswer.length; j++) {
-      if (j === index) {
-        checkArray[j] = !clickedAnswer[j];
-        if (checkArray[j]) {
-          setAnyAnswerClicked(true);
-          setMarkedAnswer(
-            props.questionsData[props.questionsIndex].answers[index]
+    for (
+      let i = 0;
+      i < questionState[props.questionsIndex].clickedAnswer.length;
+      i++
+    ) {
+      if (i === index) {
+        checkArray[i] = !questionState[props.questionsIndex].clickedAnswer[i];
+        if (checkArray[i]) {
+          onUpdateQuestions(true, props.questionsIndex);
+          onUpdateQuestions(
+            props.questionsData[props.questionsIndex].answers[index],
+            props.questionsIndex
           );
         } else {
-          setAnyAnswerClicked(false);
+          onUpdateQuestions(false, props.questionsIndex);
         }
         break;
       }
     }
-    setClickedAnswer(checkArray);
+    onUpdateQuestions(checkArray, props.questionsIndex);
   };
 
   const changeQuestionHandler = () => {
-    props.nextQuestion(markedAnswer);
-    setClickedAnswer([false, false, false, false]);
-    setAnyAnswerClicked(false);
+    props.nextQuestion(questionState[props.questionsIndex].markedAnswer);
   };
 
   return (
@@ -48,7 +54,7 @@ const SingleQuestion = (props) => {
               <li
                 onClick={() => changeAnswerHandler(index)}
                 className={
-                  clickedAnswer[index]
+                  questionState[props.questionsIndex].clickedAnswer[index]
                     ? classes.activeAnswer
                     : classes.deactiveAnswer
                 }
@@ -63,11 +69,11 @@ const SingleQuestion = (props) => {
         <button
           onClick={changeQuestionHandler}
           className={
-            !anyAnswerClicked
+            !questionState[props.questionsIndex].anyAnswerClicked
               ? classes.submitAnswerDisabled
               : classes.submitAnswerEnabled
           }
-          disabled={!anyAnswerClicked}
+          disabled={!questionState[props.questionsIndex].anyAnswerClicked}
         >
           Kontynuuj
         </button>
