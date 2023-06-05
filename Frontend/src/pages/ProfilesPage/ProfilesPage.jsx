@@ -8,20 +8,20 @@ import IconsLayer from "../../components/Profile/IconsLayer";
 import MatchScreen from "../../components/Profile/MatchScreen";
 import MissedPairScreen from "../../components/PairNotMatchedScreen/MissedPairScreen";
 
-import hr1 from "../../assets/hr1.jpg";
-import hr2 from "../../assets/hr2.jpg";
-import hr3 from "../../assets/hr3.jpg";
-import hr4 from "../../assets/hr4.jpg";
-import hr5 from "../../assets/hr5.jpg";
-import io1 from "../../assets/io1.jpg";
-import io2 from "../../assets/io2.jpg";
-import io3 from "../../assets/io3.jpg";
-import io4 from "../../assets/io4.jpg";
-import io5 from "../../assets/io5.jpg";
-import it1 from "../../assets/it1.jpg";
-import it2 from "../../assets/it2.jpg";
-import it3 from "../../assets/it3.jpg";
-import it4 from "../../assets/it4.jpg";
+import hr1 from "../../assets/grupy/hr/hr1.webp";
+import hr2 from "../../assets/grupy/hr/hr2.webp";
+import hr3 from "../../assets/grupy/hr/hr3.webp";
+import hr4 from "../../assets/grupy/hr/hr4.webp";
+import hr5 from "../../assets/grupy/hr/hr5.webp";
+import io1 from "../../assets/grupy/io/io1.webp";
+import io2 from "../../assets/grupy/io/io2.webp";
+import io3 from "../../assets/grupy/io/io3.webp";
+import io4 from "../../assets/grupy/io/io4.webp";
+import io5 from "../../assets/grupy/io/io5.webp";
+import it1 from "../../assets/grupy/it/it1.webp";
+import it2 from "../../assets/grupy/it/it2.webp";
+import it3 from "../../assets/grupy/it/it3.webp";
+import it4 from "../../assets/grupy/it/it4.webp";
 
 const profileData = [
   {
