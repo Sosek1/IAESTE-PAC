@@ -5,21 +5,3 @@
   flex-direction: column;
   overflow-y: hidden;
 }
-
-.progressBarContainer {
-  width: 100vw;
-  height: 8px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  overflow: hidden;
-  background-color: #eceaea;
-}
-
-.progressBarFill {
-  height: 100%;
-  position: absolute;
-  background-image: linear-gradient(to top right, #e7407d, #ef805e);
-  transition: width 0.3s ease-in-out;
-}
