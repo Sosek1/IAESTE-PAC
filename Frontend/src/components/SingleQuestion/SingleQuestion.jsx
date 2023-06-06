@@ -3,15 +3,6 @@ import { useState } from "react";
 import { useQuestions } from "../../store/questions-context";
 
 const SingleQuestion = (props) => {
-  // const [clickedAnswer, setClickedAnswer] = useState([
-  //   false,
-  //   false,
-  //   false,
-  //   false,
-  // ]);
-  // const [anyAnswerClicked, setAnyAnswerClicked] = useState(false);
-  // const [markedAnswer, setMarkedAnswer] = useState("");
-
   const { questionState, onUpdateQuestions } = useQuestions();
 
   const changeAnswerHandler = (index) => {

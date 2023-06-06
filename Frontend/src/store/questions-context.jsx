@@ -76,7 +76,6 @@ export const QuestionContextProvider = (props) => {
         };
       }
       updatedArr[questionIndex] = updatedObject;
-      console.log(updatedArr);
       return updatedArr;
     });
   };

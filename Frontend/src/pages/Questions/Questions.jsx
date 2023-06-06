@@ -6,12 +6,14 @@ import ProgressBar from "../../components/SingleQuestion/ProgressBar";
 import PreviousQuestionBar from "../../components/SingleQuestion/PreviousQuestionBar";
 import MultipleQuestion from "../../components/MultipleQuestion/MultipleQuestion";
 import SingleQuestion from "../../components/SingleQuestion/SingleQuestion";
+import LoaderPage from "../LoaderPage/LoaderPage";
 import { QUESTIONS_DATA } from "../../data/questionsData";
 
 const Questions = () => {
-  const [answers, setAnswers] = useState([]);
+  const [groups, setGroups] = useState([]);
   const [questionsIndex, setQuestionIndex] = useState(0);
-  const [groupCounter, setGroupCounter] = useState({
+  const [loading, setLoading] = useState(false);
+  const [groupCounters, setGroupCounters] = useState({
     IT: 0,
     HR: 0,
     PR: 0,
@@ -20,23 +22,25 @@ const Questions = () => {
     IO: 0,
   });
 
-  let sortedCounters = [];
-
   const { onMatchGroup } = useQuestions();
 
   const navigate = useNavigate();
 
   const nextQuestionHandler = (markedAnswer) => {
-    setAnswers([...answers, markedAnswer]);
+    setGroups([...groups, markedAnswer[1]]);
     if (questionsIndex < 5) {
       setQuestionIndex((prev) => prev + 1);
     }
-    setTimeout(() => {
-      if (questionsIndex === 5) {
+    // using promise to save some time for groups state to update, without it didn't mange to update for last question
+    if (questionsIndex === 5) {
+      return new Promise((resolve, reject) => {
+        setLoading(true);
+        setTimeout(resolve, 1000);
         findBiggestCounter();
+      }).then(() => {
         navigate("/profiles");
-      }
-    }, 100);
+      });
+    }
   };
 
   const lastQuestionHandler = () => {
@@ -44,39 +48,46 @@ const Questions = () => {
   };
 
   useEffect(() => {
-    for (const answer of answers) {
-      let lastAnswer = answers[answers.length - 1];
-      if (lastAnswer.length !== 5) {
-        if (lastAnswer[1].split(" ").includes("IT")) {
-          setGroupCounter((prev) => ({ ...prev, IT: prev.IT + 1 }));
-        }
-        if (lastAnswer[1].split(" ").includes("HR")) {
-          setGroupCounter((prev) => ({ ...prev, HR: prev.HR + 1 }));
-        }
-        if (lastAnswer[1].split(" ").includes("PR")) {
-          setGroupCounter((prev) => ({ ...prev, PR: prev.PR + 1 }));
-        }
-        if (lastAnswer[1].split(" ").includes("Grafika")) {
-          setGroupCounter((prev) => ({ ...prev, Grafika: prev.Grafika + 1 }));
-        }
-        if (lastAnswer[1].split(" ").includes("JFR")) {
-          setGroupCounter((prev) => ({ ...prev, JFR: prev.JFR + 1 }));
-        }
-        if (lastAnswer[1].split(" ").includes("IO")) {
-          setGroupCounter((prev) => ({ ...prev, IO: prev.IO + 1 }));
-        }
-      }
+    countGroupPoints();
+  }, [groups]);
+
+  const separatedGroups = [];
+  const countGroupPoints = () => {
+    const groupArrays = groups
+      .filter((group, index) => group !== " " && index !== 2)
+      .map((group) => group.split(" "));
+
+    for (let group of groupArrays) {
+      separatedGroups.push(...group);
     }
-  }, [answers]);
+
+    if (questionsIndex === 5) {
+      for (let group of separatedGroups) {
+        addPoints(group);
+      }
+      console.log(separatedGroups);
+    }
+  };
+
+  const addPoints = (group) => {
+    setGroupCounters((prevCounters) => ({
+      ...prevCounters,
+      [group]: prevCounters[group] + 1,
+    }));
+  };
+
+  // console.log(groupCounters);
 
   const findBiggestCounter = () => {
-    for (const group in groupCounter) {
-      sortedCounters.push([group, groupCounter[group]]);
+    const sortedCounters = [];
+    for (const group in groupCounters) {
+      sortedCounters.push([group, groupCounters[group]]);
     }
     sortedCounters.sort(function (a, b) {
       return a[1] - b[1];
     });
-    onMatchGroup(sortedCounters[5][0]);
+    // console.log(sortedCounters[5]);
+    onMatchGroup(sortedCounters[5]);
   };
 
   return (
@@ -86,6 +97,7 @@ const Questions = () => {
         questionsIndex={questionsIndex}
         lastQuestion={lastQuestionHandler}
       />
+      {loading && <LoaderPage />}
       {QUESTIONS_DATA[questionsIndex].type === "single" ? (
         <SingleQuestion
           questionsData={QUESTIONS_DATA}

@@ -47,7 +47,7 @@ export const QUESTIONS_DATA = [
     question: "Wybierz klasę postaci?",
     answers: [
       ["Wojownik", "HR"],
-      ["Mag", "Grafika IO MAG PR"],
+      ["Mag", "Grafika IO PR"],
       ["Palladyn", " "],
       ["Łotrzyk", "IT"],
     ],
