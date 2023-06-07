@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import classes from "./InstructionPage.module.css";
 import logo from "../../assets/inne/tinder-logo-red.webp";
-import DoneIcon from "@mui/icons-material/Done";
+import { motion } from "framer-motion";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { colors } from "@mui/material";
 
@@ -44,7 +44,13 @@ const InstructionPage = () => {
   ];
 
   return (
-    <main className={classes.instructionPage}>
+    <motion.div
+      className={classes.instructionPage}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+    >
       <section>
         <header>
           <img src={logo} />
@@ -65,7 +71,7 @@ const InstructionPage = () => {
       <Link to="/questions">
         <button>Kontynuuj</button>
       </Link>
-    </main>
+    </motion.div>
   );
 };
 

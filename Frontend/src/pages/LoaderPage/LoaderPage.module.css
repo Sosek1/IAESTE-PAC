@@ -8,7 +8,6 @@
   justify-content: center;
   background-color: white;
   z-index: 6;
-  animation: fade 1s;
 }
 
 .loadingPage header {
@@ -24,13 +23,4 @@
 
 .loadingPage img {
   height: 45px;
-}
-
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }

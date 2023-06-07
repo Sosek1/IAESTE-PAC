@@ -1,0 +1,7 @@
+.questionsContainer {
+  height: 100vh;
+  padding: 0px 40px 40px 40px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: hidden;
+}

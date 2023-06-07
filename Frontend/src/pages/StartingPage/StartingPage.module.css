@@ -1,6 +1,10 @@
 .startingPage {
   background-image: linear-gradient(to top right, #e7407d, #ef805e);
   height: 100vh;
+}
+
+.startingPage a {
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

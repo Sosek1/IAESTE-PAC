@@ -1,6 +1,6 @@
 import classes from "./SingleQuestion.module.css";
-import { useState } from "react";
 import { useQuestions } from "../../store/questions-context";
+import { useEffect, useState } from "react";
 
 const SingleQuestion = (props) => {
   const { questionState, onUpdateQuestions } = useQuestions();
@@ -34,42 +34,40 @@ const SingleQuestion = (props) => {
   };
 
   return (
-    <>
-      <section className={classes.singleQuestionContainer}>
-        <header>
-          <h1>{props.questionsData[props.questionsIndex].question}</h1>
-        </header>
-        <ul>
-          {props.questionsData[props.questionsIndex].answers.map(
-            (answer, index) => (
-              <li
-                onClick={() => changeAnswerHandler(index)}
-                className={
-                  questionState[props.questionsIndex].clickedAnswer[index]
-                    ? classes.activeAnswer
-                    : classes.deactiveAnswer
-                }
-                key={index}
-              >
-                {answer[0]}
-              </li>
-            )
-          )}
-        </ul>
+    <section className={classes.singleQuestionContainer}>
+      <header>
+        <h1>{props.questionsData[props.questionsIndex].question}</h1>
+      </header>
+      <ul>
+        {props.questionsData[props.questionsIndex].answers.map(
+          (answer, index) => (
+            <li
+              onClick={() => changeAnswerHandler(index)}
+              className={
+                questionState[props.questionsIndex].clickedAnswer[index]
+                  ? classes.activeAnswer
+                  : classes.deactiveAnswer
+              }
+              key={index}
+            >
+              {answer[0]}
+            </li>
+          )
+        )}
+      </ul>
 
-        <button
-          onClick={changeQuestionHandler}
-          className={
-            !questionState[props.questionsIndex].anyAnswerClicked
-              ? classes.submitAnswerDisabled
-              : classes.submitAnswerEnabled
-          }
-          disabled={!questionState[props.questionsIndex].anyAnswerClicked}
-        >
-          Kontynuuj
-        </button>
-      </section>
-    </>
+      <button
+        onClick={changeQuestionHandler}
+        className={
+          !questionState[props.questionsIndex].anyAnswerClicked
+            ? classes.submitAnswerDisabled
+            : classes.submitAnswerEnabled
+        }
+        disabled={!questionState[props.questionsIndex].anyAnswerClicked}
+      >
+        Kontynuuj
+      </button>
+    </section>
   );
 };
 

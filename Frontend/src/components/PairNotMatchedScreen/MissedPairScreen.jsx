@@ -7,6 +7,7 @@ import ProgressBar from "../Profile/ProgressBar";
 import Information from "../Profile/Information";
 
 const MissedPairScreen = ({ profileIndex, profileData }) => {
+  console.log(profileData);
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
 
   const leftListenerHandler = () => {

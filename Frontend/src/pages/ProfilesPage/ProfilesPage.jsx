@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useQuestions } from "../../store/questions-context";
-
+import { motion } from "framer-motion";
 import TopBar from "../../components/TopBar";
 import Profile from "../../components/Profile/Profile";
 import classes from "./ProfilesPage.module.css";
@@ -22,6 +22,14 @@ import it1 from "../../assets/grupy/it/it1.webp";
 import it2 from "../../assets/grupy/it/it2.webp";
 import it3 from "../../assets/grupy/it/it3.webp";
 import it4 from "../../assets/grupy/it/it4.webp";
+import grafika1 from "../../assets/grupy/grafika/grafika1.webp";
+import grafika2 from "../../assets/grupy/grafika/grafika2.webp";
+import grafika3 from "../../assets/grupy/grafika/grafika3.webp";
+import grafika4 from "../../assets/grupy/grafika/grafika4.webp";
+import pr1 from "../../assets/grupy/pr/pr1.webp";
+import pr2 from "../../assets/grupy/pr/pr2.webp";
+import pr3 from "../../assets/grupy/pr/pr3.webp";
+import pr4 from "../../assets/grupy/pr/pr4.webp";
 
 const profileData = [
   {
@@ -60,6 +68,39 @@ const profileData = [
     active: true,
     reaction: "",
   },
+  {
+    name: "Grafika",
+    description:
+      "Nie jesteśmy tacy jak inne grupy robocze. Zajmujemy się tworzeniem wszelkich grafik, których potrzebuje organizacja. Plakaty, kubki i Insta story nie są nam straszne. Czrodzieje tabletów, demony CMYKa.",
+    distance: "W okolicy",
+    pictures: [grafika1, grafika2, grafika3, grafika4],
+    interests: [
+      "kreatywni",
+      "koleżeńscy",
+      "konkretni",
+      "kolorowi",
+      "kompetentni",
+    ],
+    active: true,
+    reaction: "",
+  },
+  {
+    name: "PR",
+    description:
+      "PR, grupa promocyjna, to grupa komunikatywnych, otwartych i gotowych do działania osób. Mamy dodatkowe punkty za posiadanie Puzzla mamy dodatkowe punkty. Jeśli potrzebujesz jakiegoś pościka, to wiesz, gdzie podbijać.",
+    distance: "W okolicy",
+    pictures: [pr1, pr2, pr3, pr4],
+    interests: [
+      "agresywny PR",
+      "opela astra",
+      "na wylotówce",
+      "z rzeszowa",
+      "o 5 rano",
+      "puzzel zgon",
+    ],
+    active: true,
+    reaction: "",
+  },
 ];
 
 const ProfilesPage = () => {
@@ -67,7 +108,7 @@ const ProfilesPage = () => {
   const [matchProfile, setMatchProfile] = useState(false);
   const { matchedGroup } = useQuestions();
   const [showMissedPair, setShowMissedPair] = useState(false);
-
+  console.log(matchedGroup);
   const matchProfileIndex = profileData.findIndex(
     (item) => item.name == matchedGroup
   );
@@ -89,11 +130,16 @@ const ProfilesPage = () => {
       setShowMissedPair(true);
     }
 
-    if (currentProfileIndex < 2) setCurrentProfileIndex((prev) => prev + 1);
+    if (currentProfileIndex < 4) setCurrentProfileIndex((prev) => prev + 1);
   };
 
   return (
-    <div className={classes.profilePagecontainer}>
+    <motion.div
+      className={classes.profilePagecontainer}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 1 }}
+    >
       <TopBar />
       <Profile profileIndex={currentProfileIndex} profileData={profileData} />
       {matchProfile && (
@@ -109,7 +155,7 @@ const ProfilesPage = () => {
         />
       )}
       <IconsLayer clickedIcon={(reaction) => clickedIconHandler(reaction)} />
-    </div>
+    </motion.div>
   );
 };
 
