@@ -1,6 +1,5 @@
 import classes from "./SingleQuestion.module.css";
 import { useQuestions } from "../../store/questions-context";
-import { useEffect, useState } from "react";
 
 const SingleQuestion = (props) => {
   const { questionState, onUpdateQuestions } = useQuestions();

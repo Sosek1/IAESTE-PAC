@@ -40,7 +40,7 @@ const SaveMailPage = () => {
             type="text"
             placeholder="Podaj email"
           />
-          <Link to="/theend" style={{ textDecoration: "none" }}>
+          <Link to="/endingPage" style={{ textDecoration: "none" }}>
             <button type="submit" className={classes.sendBottomColor}>
               Wyślij
             </button>

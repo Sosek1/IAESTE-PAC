@@ -90,6 +90,7 @@ const MultipleQuestion = (props) => {
           className={
             counter === 0 ? classes.disabledButton : classes.activeButton
           }
+          disabled={counter !== 5}
         >
           {`Kontynuuj ${counter}/5`}
         </button>
