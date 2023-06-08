@@ -1,4 +1,8 @@
 import React, { useState, useContext } from "react";
+import {
+  SINGLE_QUESTIONS_STATE,
+  MULTIPLE_QUESTION_STATE,
+} from "../data/questionsDefaultState";
 
 export const QuestionsContext = React.createContext();
 
@@ -6,54 +10,26 @@ export const useQuestions = () => {
   return useContext(QuestionsContext);
 };
 
-const QUESTIONS_STATE = [
-  {
-    clickedAnswer: [false, false, false, false],
-    anyAnswerClicked: false,
-    markedAnswer: [],
-  },
-  {
-    clickedAnswer: [false, false, false, false],
-    anyAnswerClicked: false,
-    markedAnswer: [],
-  },
-  {
-    clickedAnswer: [false, false, false, false],
-    anyAnswerClicked: false,
-    markedAnswer: [],
-  },
-  {
-    clickedAnswer: [false, false, false, false],
-    anyAnswerClicked: false,
-    markedAnswer: [],
-  },
-  {
-    clickedAnswer: [false, false, false, false],
-    anyAnswerClicked: false,
-    markedAnswer: [],
-  },
-  {
-    clickedAnswer: [false, false, false, false],
-    anyAnswerClicked: false,
-    markedAnswer: [],
-  },
-  {
-    clickedAnswer: [false, false, false, false],
-    anyAnswerClicked: false,
-    markedAnswer: [],
-  },
-];
-
 export const QuestionContextProvider = (props) => {
   const [matchedGroup, setMatchedGroup] = useState([]);
-  const [questionState, setQuestionsState] = useState(QUESTIONS_STATE);
+  const [singleQuestionState, setSingleQuestionsState] = useState(
+    SINGLE_QUESTIONS_STATE
+  );
+  const [multipleQuestionState, setMultipleQuestionState] = useState(
+    MULTIPLE_QUESTION_STATE
+  );
+
+  const [multipleQuestionGroups, setMultipleQuestionGrups] = useState([]);
 
   const matchGroupHandler = (group) => {
     setMatchedGroup(group);
   };
 
-  const updateQuestionsStateHandler = (updatedProperty, questionIndex) => {
-    setQuestionsState((prevQuestionsState) => {
+  const updateSingleQuestionsStateHandler = (
+    updatedProperty,
+    questionIndex
+  ) => {
+    setSingleQuestionsState((prevQuestionsState) => {
       const updatedArr = [...prevQuestionsState];
       let updatedObject = {};
 
@@ -80,13 +56,26 @@ export const QuestionContextProvider = (props) => {
     });
   };
 
+  const updateMultipleQuestionsStateHandler = (data) => {
+    setMultipleQuestionState(data);
+  };
+
+  const sendMultipleQuestionGroupsHandler = (groups) => {
+    setMultipleQuestionGrups(groups);
+  };
+
+  console.log(multipleQuestionGroups);
+
   return (
     <QuestionsContext.Provider
       value={{
         matchedGroup,
-        questionState,
+        singleQuestionState,
+        interests: multipleQuestionState,
         onMatchGroup: matchGroupHandler,
-        onUpdateQuestions: updateQuestionsStateHandler,
+        onUpdateSingleQuestions: updateSingleQuestionsStateHandler,
+        onUpdateInterests: updateMultipleQuestionsStateHandler,
+        onSendGroups: sendMultipleQuestionGroupsHandler,
       }}
     >
       {props.children}
