@@ -1,6 +1,5 @@
 import classes from "./ProgressBar.module.css";
 const ProgressBar = ({ questionsIndex }) => {
-  console.log(questionsIndex);
   return (
     <div className={classes.progressBarContainer}>
       <div

@@ -29,6 +29,7 @@ const QuestionsPage = () => {
 
   const nextQuestionHandler = (markedAnswer) => {
     setGroups([...groups, markedAnswer[1]]);
+
     if (questionsIndex < 5) {
       setQuestionIndex((prev) => prev + 1);
     }
@@ -45,6 +46,7 @@ const QuestionsPage = () => {
   };
 
   const lastQuestionHandler = () => {
+    index -= 1;
     setQuestionIndex((prev) => prev - 1);
   };
 
@@ -54,8 +56,9 @@ const QuestionsPage = () => {
 
   const separatedGroups = [];
   const countGroupPoints = () => {
+    // console.log(groups);
     const groupArrays = groups
-      .filter((group, index) => group !== " " && index !== 2)
+      .filter((group) => group !== "brak")
       .map((group) => group.split(" "));
 
     for (let group of groupArrays) {
@@ -109,13 +112,17 @@ const QuestionsPage = () => {
         <SingleQuestion
           questionsData={QUESTIONS_DATA}
           questionsIndex={questionsIndex}
-          nextQuestion={(markedAnswer) => nextQuestionHandler(markedAnswer)}
+          nextQuestion={(markedAnswer, indexx) =>
+            nextQuestionHandler(markedAnswer)
+          }
         />
       ) : (
         <MultipleQuestion
           questionsData={QUESTIONS_DATA}
           questionsIndex={questionsIndex}
-          nextQuestion={(markedAnswer) => nextQuestionHandler(markedAnswer)}
+          nextQuestion={(markedAnswer, index) =>
+            nextQuestionHandler(markedAnswer)
+          }
         />
       )}
     </motion.main>

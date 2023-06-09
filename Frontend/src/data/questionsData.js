@@ -14,7 +14,7 @@ export const QUESTIONS_DATA = [
     answers: [
       ["Doswiadczenia", "Grafika IT"],
       ["Pieniądze", "IO JFR"],
-      ["Sława", " "],
+      ["Sława", "brak"],
       ["Rodzina", "HR PR"],
     ],
     type: "single",
@@ -26,7 +26,7 @@ export const QUESTIONS_DATA = [
     question: "Najlepszy sztuciec:",
     answers: [
       ["Łyżka", "HR IO"],
-      ["Nóż", " "],
+      ["Nóż", "brak"],
       ["Widelec", "Grafika"],
       ["Pałeczki do suhshi", "IT PR"],
     ],
@@ -38,7 +38,7 @@ export const QUESTIONS_DATA = [
       ["Wąż", "HR IO JFR"],
       ["Język", "IT Grafika"],
       ["Znak zodikau", "PR"],
-      ["Godło slytherinu", " "],
+      ["Godło slytherinu", "brak"],
     ],
 
     type: "single",
@@ -48,7 +48,7 @@ export const QUESTIONS_DATA = [
     answers: [
       ["Wojownik", "HR"],
       ["Mag", "Grafika IO PR"],
-      ["Palladyn", " "],
+      ["Palladyn", "brak"],
       ["Łotrzyk", "IT"],
     ],
     type: "single",

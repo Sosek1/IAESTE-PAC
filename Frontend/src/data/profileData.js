@@ -20,6 +20,11 @@ import pr1 from "../assets/grupy/pr/pr1.webp";
 import pr2 from "../assets/grupy/pr/pr2.webp";
 import pr3 from "../assets/grupy/pr/pr3.webp";
 import pr4 from "../assets/grupy/pr/pr4.webp";
+import jfr1 from "../assets/grupy/jfr/jfr1.webp";
+import jfr2 from "../assets/grupy/jfr/jfr2.webp";
+import jfr3 from "../assets/grupy/jfr/jfr3.webp";
+import jfr4 from "../assets/grupy/jfr/jfr4.webp";
+import jfr5 from "../assets/grupy/jfr/jfr5.webp";
 
 export const PROFILES_DATA = [
   {
@@ -80,5 +85,13 @@ export const PROFILES_DATA = [
       "o 5 rano",
       "puzzel zgon",
     ],
+  },
+  {
+    name: "JFR",
+    description:
+      "Siemano! Jeśli nie jesteś frajerem, lubisz kolor czerwony, wolności słowa i wspólnotę, a także chciałbyś zdobyć kontakty lub mieć gadane jak niejeden dyktator, zapraszamy do JFRU! Tutaj wyszkolimy cię byś z numeru telefonicznego potrafił wyczarować wszystko i nic ☎️",
+    distance: "W okolicy",
+    pictures: [jfr1, jfr2, jfr3, jfr4, jfr5],
+    interests: ["JFR", "->", "Jebać", "Frajerów", "Razem"],
   },
 ];

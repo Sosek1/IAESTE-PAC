@@ -19,7 +19,10 @@ export const QuestionContextProvider = (props) => {
     MULTIPLE_QUESTION_STATE
   );
 
-  const [multipleQuestionGroups, setMultipleQuestionGrups] = useState([]);
+  const [multipleQuestionHelpers, setMultipleQuestionHelpers] = useState({
+    isContinueDisabled: true,
+    counter: 0,
+  });
 
   const matchGroupHandler = (group) => {
     setMatchedGroup(group);
@@ -60,11 +63,19 @@ export const QuestionContextProvider = (props) => {
     setMultipleQuestionState(data);
   };
 
-  const sendMultipleQuestionGroupsHandler = (groups) => {
-    setMultipleQuestionGrups(groups);
+  const continueDisabledHandler = (data) => {
+    setMultipleQuestionHelpers({
+      ...multipleQuestionHelpers,
+      isContinueDisabled: data,
+    });
   };
 
-  console.log(multipleQuestionGroups);
+  const counterHanlder = (value) => {
+    setMultipleQuestionHelpers((prev) => ({
+      ...multipleQuestionHelpers,
+      counter: prev.counter + value,
+    }));
+  };
 
   return (
     <QuestionsContext.Provider
@@ -72,10 +83,13 @@ export const QuestionContextProvider = (props) => {
         matchedGroup,
         singleQuestionState,
         interests: multipleQuestionState,
+        isContinueDisabled: multipleQuestionHelpers.isContinueDisabled,
+        counter: multipleQuestionHelpers.counter,
         onMatchGroup: matchGroupHandler,
         onUpdateSingleQuestions: updateSingleQuestionsStateHandler,
         onUpdateInterests: updateMultipleQuestionsStateHandler,
-        onSendGroups: sendMultipleQuestionGroupsHandler,
+        setIsContinueDisabled: continueDisabledHandler,
+        setCounter: counterHanlder,
       }}
     >
       {props.children}

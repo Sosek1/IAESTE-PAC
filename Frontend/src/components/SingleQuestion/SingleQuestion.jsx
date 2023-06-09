@@ -30,7 +30,9 @@ const SingleQuestion = (props) => {
   };
 
   const changeQuestionHandler = () => {
-    props.nextQuestion(singleQuestionState[props.questionsIndex].markedAnswer);
+    props.nextQuestion(
+      singleQuestionState[props.questionsIndex].markedAnswer[1]
+    );
   };
 
   return (
