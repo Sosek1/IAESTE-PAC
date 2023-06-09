@@ -29,10 +29,7 @@ const Profile = ({ profileIndex, profileData }) => {
   return (
     <div className={classes.container}>
       <div className={classes.leftListener} onClick={leftListenerHandler}></div>
-      <div
-        className={classes.rightListener}
-        onClick={rightListenerHandler}
-      ></div>
+      <div className={classes.rightListener} onClick={rightListenerHandler}></div>
       <div className={classes.imagesContainer}>
         <Sticker stickerText={"LIKE"} activeSticker={activeLikeSticker} />
         <Sticker stickerText={"NOPE"} activeSticker={activeNopeSticker} />
@@ -46,10 +43,9 @@ const Profile = ({ profileIndex, profileData }) => {
           currentPhotoIndex={currentPhotoIndex}
           currentProfileIndex={profileIndex}
         />
-        <img
-          className={classes.image}
-          src={profileData[profileIndex].pictures[currentPhotoIndex]}
-        />
+        <img className={classes.image} src={profileData[profileIndex].pictures[currentPhotoIndex]}/>
+        <div className={classes.gradient}/>
+        <div className={classes.imgCover}></div>
       </div>
     </div>
   );

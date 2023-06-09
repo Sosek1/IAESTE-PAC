@@ -2,7 +2,7 @@
   height: auto;
   width: 100%;
   position: fixed;
-  bottom: 30px;
+  bottom: 4%;
   display: flex;
   justify-content: center;
   gap: 50px;
@@ -10,8 +10,8 @@
 }
 
 .iconBox {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;

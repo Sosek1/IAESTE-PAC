@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useQuestions } from "../../store/questions-context";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useDragControls } from "framer-motion";
 import TopBar from "../../components/TopBar";
 import Profile from "../../components/Profile/Profile";
 import classes from "./ProfilesPage.module.css";
@@ -15,6 +16,8 @@ const ProfilesPage = () => {
   const [matchProfile, setMatchProfile] = useState(false);
   const [showMissedPair, setShowMissedPair] = useState(false);
   const { matchedGroup } = useQuestions();
+  const constraintsRef = useRef(null);
+  const controls = useDragControls();
 
   const matchProfileIndex = profileData.findIndex(
     (item) => item.name == matchedGroup[0]
@@ -56,20 +59,29 @@ const ProfilesPage = () => {
       transition={{ duration: 0.5, delay: 1 }}
     >
       <TopBar />
-      <Profile profileIndex={currentProfileIndex} profileData={profileData} />
-      {matchProfile && (
-        <MatchScreen
-          profileIndex={currentProfileIndex}
-          profileData={profileData}
-        />
-      )}
-      {showMissedPair && (
-        <MissedPairScreen
-          profileIndex={matchProfileIndex}
-          profileData={profileData}
-        />
-      )}
-      <IconsLayer clickedIcon={(reaction) => clickedIconHandler(reaction)} />
+      <motion.div className="swipeArea"
+      ref={constraintsRef}
+      drag 
+      dragConstraints={constraintsRef}
+      dragControls={controls}
+      dragListener={true}
+      >
+        <Profile profileIndex={currentProfileIndex} profileData={profileData} />
+        {matchProfile && (
+          <MatchScreen
+            profileIndex={currentProfileIndex}
+            profileData={profileData}
+          />
+        )}
+        {showMissedPair && (
+          <MissedPairScreen
+            profileIndex={matchProfileIndex}
+            profileData={profileData}
+          />
+        )}
+      </motion.div>
+      <IconsLayer
+        clickedIcon={(reaction) => clickedIconHandler(reaction)} />
     </motion.div>
   );
 };
