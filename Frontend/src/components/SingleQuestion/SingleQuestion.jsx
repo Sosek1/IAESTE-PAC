@@ -2,34 +2,35 @@ import classes from "./SingleQuestion.module.css";
 import { useQuestions } from "../../store/questions-context";
 
 const SingleQuestion = (props) => {
-  const { questionState, onUpdateQuestions } = useQuestions();
+  const { singleQuestionState, onUpdateSingleQuestions } = useQuestions();
 
   const changeAnswerHandler = (index) => {
     let checkArray = [false, false, false, false];
     for (
       let i = 0;
-      i < questionState[props.questionsIndex].clickedAnswer.length;
+      i < singleQuestionState[props.questionsIndex].clickedAnswer.length;
       i++
     ) {
       if (i === index) {
-        checkArray[i] = !questionState[props.questionsIndex].clickedAnswer[i];
+        checkArray[i] =
+          !singleQuestionState[props.questionsIndex].clickedAnswer[i];
         if (checkArray[i]) {
-          onUpdateQuestions(true, props.questionsIndex);
-          onUpdateQuestions(
+          onUpdateSingleQuestions(true, props.questionsIndex);
+          onUpdateSingleQuestions(
             props.questionsData[props.questionsIndex].answers[index],
             props.questionsIndex
           );
         } else {
-          onUpdateQuestions(false, props.questionsIndex);
+          onUpdateSingleQuestions(false, props.questionsIndex);
         }
         break;
       }
     }
-    onUpdateQuestions(checkArray, props.questionsIndex);
+    onUpdateSingleQuestions(checkArray, props.questionsIndex);
   };
 
   const changeQuestionHandler = () => {
-    props.nextQuestion(questionState[props.questionsIndex].markedAnswer);
+    props.nextQuestion(singleQuestionState[props.questionsIndex].markedAnswer);
   };
 
   return (
@@ -43,7 +44,7 @@ const SingleQuestion = (props) => {
             <li
               onClick={() => changeAnswerHandler(index)}
               className={
-                questionState[props.questionsIndex].clickedAnswer[index]
+                singleQuestionState[props.questionsIndex].clickedAnswer[index]
                   ? classes.activeAnswer
                   : classes.deactiveAnswer
               }
@@ -58,11 +59,11 @@ const SingleQuestion = (props) => {
       <button
         onClick={changeQuestionHandler}
         className={
-          !questionState[props.questionsIndex].anyAnswerClicked
+          !singleQuestionState[props.questionsIndex].anyAnswerClicked
             ? classes.submitAnswerDisabled
             : classes.submitAnswerEnabled
         }
-        disabled={!questionState[props.questionsIndex].anyAnswerClicked}
+        disabled={!singleQuestionState[props.questionsIndex].anyAnswerClicked}
       >
         Kontynuuj
       </button>
