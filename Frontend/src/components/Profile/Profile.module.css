@@ -19,13 +19,24 @@
   object-fit: cover;
 }
 
+.imgCover{
+  position: absolute;
+  height: 11%;
+  width: 100%;
+  bottom: 0;
+  z-index: 2;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #010101;
+}
+
 .leftListener {
   position: absolute;
   height: 100%;
   width: calc(50% - 10px);
-  /* background-color: #ff445762; */
   z-index: 2;
 }
+
 .rightListener {
   position: absolute;
   height: 100%;
@@ -33,4 +44,11 @@
   right: 10px;
   /* background-color: #7cfda385; */
   z-index: 2;
+}
+
+.gradient{
+  position: sticky;
+  height: 50%;
+  background: linear-gradient(to top, #010101, rgba(0, 0, 0, 0));
+  bottom: 9%;
 }
