@@ -59,12 +59,13 @@ const ProfilesPage = () => {
       transition={{ duration: 0.5, delay: 1 }}
     >
       <TopBar />
-      <motion.div className="swipeArea"
-      ref={constraintsRef}
-      drag 
-      dragConstraints={constraintsRef}
-      dragControls={controls}
-      dragListener={true}
+      <motion.div
+        className="swipeArea"
+        ref={constraintsRef}
+        drag
+        dragConstraints={constraintsRef}
+        dragControls={controls}
+        dragListener={true}
       >
         <Profile profileIndex={currentProfileIndex} profileData={profileData} />
         {matchProfile && (
@@ -80,8 +81,7 @@ const ProfilesPage = () => {
           />
         )}
       </motion.div>
-      <IconsLayer
-        clickedIcon={(reaction) => clickedIconHandler(reaction)} />
+      <IconsLayer clickedIcon={(reaction) => clickedIconHandler(reaction)} />
     </motion.div>
   );
 };

@@ -35,9 +35,9 @@ const QuestionsPage = () => {
     }
     // using promise to save some time for groups state to update, without it didn't mange to update for last question
     if (questionsIndex === 5) {
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         setLoading(true);
-        setTimeout(resolve, 1000);
+        setTimeout(resolve, 700);
         findBiggestCounter();
       }).then(() => {
         navigate("/profiles");
@@ -83,6 +83,7 @@ const QuestionsPage = () => {
   // console.log(groupCounters);
 
   const findBiggestCounter = () => {
+    console.log(groups);
     const sortedCounters = [];
     for (const group in groupCounters) {
       sortedCounters.push([group, groupCounters[group]]);
@@ -91,6 +92,7 @@ const QuestionsPage = () => {
       return a[1] - b[1];
     });
     // console.log(sortedCounters[5]);
+    // console.log(sortedCounters);
     onMatchGroup(sortedCounters[5]);
   };
 
@@ -100,7 +102,7 @@ const QuestionsPage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 1.5, delay: 0.5 }}
+      transition={{ duration: 0.3 }}
     >
       <ProgressBar questionsIndex={questionsIndex} />
       <PreviousQuestionBar

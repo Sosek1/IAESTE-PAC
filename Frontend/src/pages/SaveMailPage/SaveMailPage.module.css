@@ -1,6 +1,6 @@
 .SaveMailPage {
   background-color: white;
-  height: 100vh;
+  height: 100dvh;
   padding: 40px;
   display: flex;
   flex-direction: column;

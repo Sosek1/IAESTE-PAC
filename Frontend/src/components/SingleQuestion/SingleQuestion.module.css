@@ -28,7 +28,7 @@
   border-radius: 30px;
   list-style-type: none;
   text-align: center;
-  transition: border 0.3s linear, color 0.3s linear;
+  transition: border 0.15s linear, color 0.15s linear;
 }
 
 .deactiveAnswer {

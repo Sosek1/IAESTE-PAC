@@ -1,6 +1,7 @@
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import classes from "./iconsLayer.module.css";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import { motion } from "framer-motion";
 
 const IconsLayer = ({ clickedIcon }) => {
   return (

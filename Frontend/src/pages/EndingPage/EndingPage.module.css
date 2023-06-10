@@ -1,6 +1,6 @@
 .EndingPage {
   background-image: linear-gradient(to top right, #e7407d, #ef805e);
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;

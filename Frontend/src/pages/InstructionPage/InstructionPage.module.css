@@ -1,6 +1,6 @@
 .instructionPage {
   background-color: white;
-  height: 100vh;
+  height: 100dvh;
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -64,5 +64,6 @@
   font-weight: 600;
   border: none;
   margin-top: auto;
+  margin-bottom: 20px;
   text-decoration: none;
 }

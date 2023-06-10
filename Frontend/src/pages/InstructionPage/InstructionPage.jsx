@@ -26,7 +26,8 @@ const InstructionPage = () => {
     },
     {
       title: "Grupy robocze",
-      description: "Grupami roboczymi w naszej organizacji są: IT, Grafika, HR, PF, I&O oraz JFR",
+      description:
+        "Grupami roboczymi w naszej organizacji są: IT, Grafika, HR, PF, I&O oraz JFR",
       icon: styledIcon,
     },
     {
@@ -49,7 +50,7 @@ const InstructionPage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, delay: 0.5 }}
+      transition={{ duration: 0.3, delay: 0.3 }}
     >
       <section>
         <header>
