@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { useQuestions } from "../../store/questions-context";
 import { useRef } from "react";
-import { motion, transform, useDragControls, useMotionValue, useTransform } from "framer-motion";
+import {
+  motion,
+  transform,
+  useDragControls,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
 import TopBar from "../../components/TopBar";
 import Profile from "../../components/Profile/Profile";
 import classes from "./ProfilesPage.module.css";
@@ -53,31 +59,32 @@ const ProfilesPage = () => {
 
   //funkcja sprawdzająca położenie swipowanej grupy - setLiked = 1 -> polubione, 0 -> neutral, -1 -> dislike
   const setSwipeState = () => {
-    if(x.get() > 130){
+    if (x.get() > 130) {
       setLiked(1);
-    }else if(x.get() < -130){
+    } else if (x.get() < -130) {
       setLiked(-1);
-    }else{
+    } else {
       setLiked(0);
     }
     //console.log(x.get());
     //console.log(liked);
-  }
+  };
 
-  //funkcja odpala się w momencie gdy user przestaje dotykać ekran, lajkujemy bądź nie 
-  const checkSwipePosibillity = () =>{
-    if(liked === 1){
+  //funkcja odpala się w momencie gdy user przestaje dotykać ekran, lajkujemy bądź nie
+  const checkSwipePosibillity = () => {
+    if (liked === 1) {
       clickedIconHandler("LIKE");
-    }else if(liked === -1){
+    } else if (liked === -1) {
       clickedIconHandler("DISLIKE");
     }
-  }
+  };
 
   return (
     <motion.div
       className={classes.profilePagecontainer}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       transition={{ duration: 0.5, delay: 1 }}
     >
       <TopBar />
@@ -96,10 +103,11 @@ const ProfilesPage = () => {
         className={classes.hiddenProfile} 
         profileIndex={currentProfileIndex + 1} //tuataj będzie profil na spodzie, pod tym kóry jest aktualnie wybierany
         profileData={profileData} /> */}
-        <Profile 
-        className={classes.visibleProfile}
-        profileIndex={currentProfileIndex} 
-        profileData={profileData} />
+        <Profile
+          className={classes.visibleProfile}
+          profileIndex={currentProfileIndex}
+          profileData={profileData}
+        />
         {matchProfile && (
           <MatchScreen
             profileIndex={currentProfileIndex}
@@ -113,7 +121,9 @@ const ProfilesPage = () => {
           />
         )}
       </motion.div>
-      <IconsLayer clickedIcon={(reaction) => clickedIconHandler(reaction)} />
+      {!matchProfile && (
+        <IconsLayer clickedIcon={(reaction) => clickedIconHandler(reaction)} />
+      )}
     </motion.div>
   );
 };

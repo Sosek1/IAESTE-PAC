@@ -1,6 +1,5 @@
 import classes from "./SingleQuestion.module.css";
 import { useQuestions } from "../../store/questions-context";
-import { motion } from "framer-motion";
 
 const SingleQuestion = (props) => {
   const { singleQuestionState, onUpdateSingleQuestions } = useQuestions();
@@ -37,11 +36,7 @@ const SingleQuestion = (props) => {
   };
 
   return (
-    <motion.section
-      className={classes.singleQuestionContainer}
-      // animate={{ opacity: 1 }}
-      // exit={{ opacity: 0 }}
-    >
+    <section className={classes.singleQuestionContainer}>
       <header>
         <h1>{props.questionsData[props.questionsIndex].question}</h1>
       </header>
@@ -74,7 +69,7 @@ const SingleQuestion = (props) => {
       >
         Kontynuuj
       </button>
-    </motion.section>
+    </section>
   );
 };
 
