@@ -4,7 +4,9 @@ const ProgressBar = ({ questionsIndex }) => {
     <div className={classes.progressBarContainer}>
       <div
         className={classes.progressBarFill}
-        style={{ width: `${16.66 * questionsIndex + 1}%` }}
+        style={{
+          width: `${questionsIndex === 0 ? 0 : 20 * questionsIndex}%`,
+        }}
       ></div>
     </div>
   );

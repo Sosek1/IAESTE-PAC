@@ -34,11 +34,12 @@
   border: 1px solid #b0b0b0;
   list-style-type: none;
   color: #b0b0b0;
+  transition: border 0.15s linear, color 0.15s ease;
 }
 
 .multipleQuestionContainer .activeWord {
   color: #ff6b6b;
-  border-color: #ff6b6b;
+  border: 1px solid#ff6b6b;
 }
 
 .selected {

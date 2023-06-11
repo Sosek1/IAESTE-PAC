@@ -1,7 +1,7 @@
-// @ts-ignore
 import classes from "./SaveMailPage.module.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const SaveMailPage = () => {
   const [buttonActive, setButtonActive] = useState(false);
@@ -19,7 +19,13 @@ const SaveMailPage = () => {
   };
 
   return (
-    <main className={classes.SaveMailPage}>
+    <motion.main
+      className={classes.SaveMailPage}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <section>
         <h1 className={classes.header}>Podaj swój adres email</h1>
         <p className={classes.paragraph}>
@@ -34,14 +40,14 @@ const SaveMailPage = () => {
             type="text"
             placeholder="Podaj email"
           />
-          <Link to="/theend" style={{ textDecoration: "none" }}>
+          <Link to="/endingPage" style={{ textDecoration: "none" }}>
             <button type="submit" className={classes.sendBottomColor}>
               Wyślij
             </button>
           </Link>
         </form>
       </section>
-    </main>
+    </motion.main>
   );
 };
 

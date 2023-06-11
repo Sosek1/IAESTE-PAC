@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import classes from "./InstructionPage.module.css";
-import logo from "../../assets/tinder-logo-red.png";
-import DoneIcon from "@mui/icons-material/Done";
+import logo from "../../assets/inne/tinder-logo-red.webp";
+import { motion } from "framer-motion";
 import KeyboardDoubleArrowRightIcon from "@mui/icons-material/KeyboardDoubleArrowRight";
 import { colors } from "@mui/material";
 
@@ -21,30 +21,37 @@ const InstructionPage = () => {
     {
       title: "Struktura IAESTE",
       description:
-        "IAESTE jest podzielone na 6 grup roboczych. Każdy kandydat musi wybrać przy rekrutacji, do której grupy chce dołączyć",
+        "IAESTE dzieli się na 6 grup roboczych, a kandydaci muszą wybrać, do której z nich chcą dołączyć podczas rekrutacji",
       icon: styledIcon,
     },
     {
       title: "Grupy robocze",
-      description: "IT, Grafika, HR, Pr, I&O, JFR",
+      description:
+        "Grupami roboczymi w naszej organizacji są: IT, Grafika, HR, PF, I&O oraz JFR",
       icon: styledIcon,
     },
     {
-      title: "Nasza aplikacja",
+      title: "Czym jest IAESTE PAC?",
       description:
-        "IAESTE PAC to aplikacja, dzięki której dowiesz się, do której grupy roboczej pasujesz",
+        "IAESTE PAC to narzędzie, dzięki któremu dowiesz się, do której grupy roboczej pasujesz najbardziej",
       icon: styledIcon,
     },
     {
       title: "Twoja aktywność",
       description:
-        "Po kliknięciu kontynuuj, odpowiesz na kilka pytań a następie poznasz grupy robocze przeglądając ich profile i wybierzesz te, które ci się spodobają",
+        "Po kliknięciu kontynuuj, odpowiesz na kilka pytań, a następie poznasz odpowiednie grupy robocze oraz wybierzesz te, które najbardziej do Ciebie pasują",
       icon: styledIcon,
     },
   ];
 
   return (
-    <main className={classes.instructionPage}>
+    <motion.div
+      className={classes.instructionPage}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.3, delay: 0.3 }}
+    >
       <section>
         <header>
           <img src={logo} />
@@ -65,7 +72,7 @@ const InstructionPage = () => {
       <Link to="/questions">
         <button>Kontynuuj</button>
       </Link>
-    </main>
+    </motion.div>
   );
 };
 

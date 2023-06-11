@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import classes from "./MatchScreen.module.css";
-import match from "../../assets/match.png";
-
+import match from "../../assets/inne/match.webp";
+import { motion } from "framer-motion";
+import mark from "../../assets/inne/verifiedMark.webp";
 import ProgressBar from "./ProgressBar";
+import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 
 const MatchScreen = ({ profileIndex, profileData }) => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
@@ -21,7 +23,12 @@ const MatchScreen = ({ profileIndex, profileData }) => {
   };
 
   return (
-    <div className={classes.container}>
+    <motion.div
+      className={classes.container}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5, delay: 1 }}
+    >
       <div className={classes.leftListener} onClick={leftListenerHandler}></div>
       <div
         className={classes.rightListener}
@@ -33,6 +40,27 @@ const MatchScreen = ({ profileIndex, profileData }) => {
         currentPhotoIndex={currentPhotoIndex}
         currentProfileIndex={profileIndex}
       />
+
+      <div className={classes.groupNameWrapper}>
+        <h2>{profileData[profileIndex].name}</h2>
+        <img src={mark} />
+      </div>
+      <div className={classes.onlineDistance}>
+        <div className={classes.onlineDistanceWrapper}>
+          <div className={classes.dot}></div>
+          <p>Teraz online</p>
+        </div>
+        <div className={classes.onlineDistanceWrapper}>
+          <FmdGoodOutlinedIcon
+            style={{
+              fontSize: "20px",
+              color: "#656e7b",
+              marginRight: "5px",
+            }}
+          />
+          <p>{profileData[profileIndex].distance}</p>
+        </div>
+      </div>
       <img
         className={classes.image}
         src={profileData[profileIndex].pictures[currentPhotoIndex]}
@@ -41,7 +69,7 @@ const MatchScreen = ({ profileIndex, profileData }) => {
       <Link to="/saveMail" style={{ textDecoration: "none" }}>
         <button className={classes.submitAnswear}>Kontynuuj</button>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

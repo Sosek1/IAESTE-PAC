@@ -1,0 +1,119 @@
+.SingleQuestionPage {
+  height: calc(100dvh - 8px - 20px);
+  padding: 0px 50px 30px 50px;
+  display: flex;
+  flex-direction: column;
+}
+.SingleQuestionPage img {
+  height: 47px;
+}
+.SingleQuestionPage header {
+  width: 100%;
+  text-align: left;
+  padding-top: 10vh;
+  display: flex;
+}
+
+.proggresBar {
+  width: 100%;
+  height: 8px;
+  background-color: white;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.proggresBarFill {
+  height: 100%;
+  background-image: linear-gradient(to top right, #e7407d, #ef805e);
+  border-end-end-radius: 10px;
+  border-start-end-radius: 10px;
+  width: 50%;
+}
+
+.backButton {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: large;
+  display: flex;
+}
+
+.Answers {
+  width: 100%;
+  margin-top: 10vh;
+}
+
+.SingleQuestionPage ul {
+  list-style-type: none;
+  width: 100%;
+  overflow-y: auto;
+  gap: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 0;
+}
+
+.Deactive {
+  padding: 10px 10px;
+  width: auto;
+  border: 1px solid gray;
+  border-radius: 30px;
+  list-style-type: none;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  color: gray;
+}
+
+.Active {
+  box-sizing: border-box;
+  border: 1px solid;
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+  border-radius: 30px;
+  width: auto;
+  text-align: center;
+  padding: 10px 10px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.Link {
+  margin-top: auto;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.SubmitAnswer {
+  margin-top: auto;
+  height: 40px;
+  width: 100%;
+  font-size: 18px;
+  background-image: linear-gradient(to right, #e7407d, #ef805e);
+  color: white;
+  border-radius: 26px;
+  border: none;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+}
+
+.SubmitAnswerDisabled {
+  margin-top: auto;
+  height: 40px;
+  width: 100%;
+  font-size: 18px;
+  background-color: #b0b0b0;
+  color: white;
+  border-radius: 26px;
+  border: none;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+}

@@ -1,5 +1,5 @@
 import classes from "./TopBar.module.css";
-import logo from "../assets/tinder-logo-red.png";
+import logo from "../assets/inne/tinder-logo-red.webp";
 
 const TopBar = () => {
   return (

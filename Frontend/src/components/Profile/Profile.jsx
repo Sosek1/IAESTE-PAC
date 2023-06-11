@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import classes from "./profile.module.css";
-
 import ProgressBar from "./ProgressBar";
 import Information from "./Information";
 import Sticker from "./Sticker";
+import Match from "./Match"; 
 
-const Profile = ({ profileIndex, profileData }) => {
+const Profile = ({ profileIndex, profileData, matchProfile, isHidden }) => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [activeLikeSticker, setActiveLikeSticker] = useState(false);
   const [activeNopeSticker, setActiveNopeSticker] = useState(false);
@@ -15,23 +15,31 @@ const Profile = ({ profileIndex, profileData }) => {
   }, [profileIndex]);
 
   const leftListenerHandler = () => {
+    console.log("xd");
     if (currentPhotoIndex >= 1) {
       setCurrentPhotoIndex((prev) => prev - 1);
     }
   };
 
   const rightListenerHandler = () => {
+    console.log("xd");
     if (currentPhotoIndex < profileData[profileIndex].pictures.length - 1) {
       setCurrentPhotoIndex((prev) => prev + 1);
     }
   };
 
+  
+
   return (
-    <div className={classes.container}>
-      <div className={classes.leftListener} onClick={leftListenerHandler}></div>
+    <div className={`${isHidden ? classes.hiddenContainer : classes.container }`} >
       <div
-        className={classes.rightListener}
-        onClick={rightListenerHandler}
+      className={`${isHidden ? classes.leftListene : classes.leftListener }`} 
+      // className={classes.leftListener} 
+      onClick={isHidden ? null : leftListenerHandler } />
+      <div
+        //className={classes.rightListener}
+        className={`${isHidden ? classes.right : classes.rightListener }`} 
+        onClick={isHidden ? null : rightListenerHandler}
       ></div>
       <div className={classes.imagesContainer}>
         <Sticker stickerText={"LIKE"} activeSticker={activeLikeSticker} />
@@ -45,11 +53,15 @@ const Profile = ({ profileIndex, profileData }) => {
           profileData={profileData}
           currentPhotoIndex={currentPhotoIndex}
           currentProfileIndex={profileIndex}
+          isHidden={isHidden}
         />
         <img
           className={classes.image}
           src={profileData[profileIndex].pictures[currentPhotoIndex]}
         />
+        <div className={`${isHidden ? classes.hiddenGradient : classes.gradient }`} />
+        <div className={classes.imgCover}></div>
+        {matchProfile && <Match/>}
       </div>
     </div>
   );
