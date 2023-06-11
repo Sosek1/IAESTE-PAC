@@ -77,10 +77,6 @@ const ProfilesPage = () => {
       clickedIconHandler("DISLIKE");
     }
   };
-<<<<<<< HEAD
-
-=======
->>>>>>> cb20a86ae82588ebbb86eacf698079fd72d4097c
 
   return (
     <motion.div
@@ -91,14 +87,16 @@ const ProfilesPage = () => {
       transition={{ duration: 0.5, delay: 1 }}
     >
       <TopBar />
-      { currentProfileIndex !== (profileData.length - 1) && (<Profile 
-        className={classes.hiddenProfile} 
-        profileIndex={currentProfileIndex + 1} //tuataj będzie profil na spodzie, pod tym kóry jest aktualnie wybierany
-        profileData={profileData}
-        isHidden={true}
-        type="hidden"
-        /> )}
-       <motion.div
+      {currentProfileIndex !== profileData.length - 1 && (
+        <Profile
+          className={classes.hiddenProfile}
+          profileIndex={currentProfileIndex + 1} //tuataj będzie profil na spodzie, pod tym kóry jest aktualnie wybierany
+          profileData={profileData}
+          isHidden={true}
+          type="hidden"
+        />
+      )}
+      <motion.div
         className={classes.swipeArea}
         ref={constraintsRef}
         style={{ x }}
@@ -109,46 +107,23 @@ const ProfilesPage = () => {
         onDrag={setSwipeState}
         onDragEnd={checkSwipePosibillity}
       >
-<<<<<<< HEAD
-        <Profile 
-        className={classes.visibleProfile}
-        profileIndex={currentProfileIndex} 
-        profileData={profileData} 
-        isHidden={false}
-        matchProfile={matchProfile}
-        />
-=======
-        {/* <Profile 
-        className={classes.hiddenProfile} 
-        profileIndex={currentProfileIndex + 1} //tuataj będzie profil na spodzie, pod tym kóry jest aktualnie wybierany
-        profileData={profileData} /> */}
         <Profile
           className={classes.visibleProfile}
           profileIndex={currentProfileIndex}
           profileData={profileData}
+          isHidden={false}
+          matchProfile={matchProfile}
         />
-        {matchProfile && (
-          <MatchScreen
-            profileIndex={currentProfileIndex}
-            profileData={profileData}
-          />
-        )}
->>>>>>> cb20a86ae82588ebbb86eacf698079fd72d4097c
         {showMissedPair && (
           <MissedPairScreen
             profileIndex={matchProfileIndex}
             profileData={profileData}
           />
         )}
-<<<<<<< HEAD
-      </motion.div> 
-      {!matchProfile && ( <IconsLayer clickedIcon={(reaction) => clickedIconHandler(reaction)} /> )}
-=======
       </motion.div>
       {!matchProfile && (
         <IconsLayer clickedIcon={(reaction) => clickedIconHandler(reaction)} />
       )}
->>>>>>> cb20a86ae82588ebbb86eacf698079fd72d4097c
     </motion.div>
   );
 };
