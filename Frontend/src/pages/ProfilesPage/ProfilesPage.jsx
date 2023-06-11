@@ -21,20 +21,16 @@ const ProfilesPage = () => {
   const controls = useDragControls();
   const x = useMotionValue();
 
-  // console.log(profileData);
-  // console.log(matchedGroup);
   const matchProfileIndex = profileData.findIndex(
     (item) => item.name == matchedGroup[0]
   );
-  // console.log(matchProfileIndex);
-  // console.log(profileData - 1);
-       if (matchProfileIndex !== profileData.length - 1) {
-         let temp = profileData[matchProfileIndex];
-         profileData[matchProfileIndex] = profileData[profileData.length - 1];
-         profileData[profileData.length - 1] = temp;
-       }
 
-  //console.log(profileData);
+  //funkcja sprawdza czy nasz match jest ostatni w kolejności, jak nie to zamienia
+  if (matchProfileIndex !== profileData.length - 1) {
+    let temp = profileData[matchProfileIndex];
+    profileData[matchProfileIndex] = profileData[profileData.length - 1];
+    profileData[profileData.length - 1] = temp;
+  }
 
   const clickedIconHandler = (reaction) => {
     if (reaction === "LIKE" && currentProfileIndex == matchProfileIndex) {
@@ -48,7 +44,6 @@ const ProfilesPage = () => {
       currentProfileIndex === profileData.length - 1 &&
       matchProfile === false
     ) {
-      //console.log(matchProfileIndex);
       setShowMissedPair(true);
     }
 
@@ -56,7 +51,7 @@ const ProfilesPage = () => {
       setCurrentProfileIndex((prev) => prev + 1);
   };
 
-  //funkcja sprawdzająca położenie swipowanej grupy, 
+  //funkcja sprawdzająca położenie swipowanej grupy - setLiked = 1 -> polubione, 0 -> neutral, -1 -> dislike
   const setSwipeState = () => {
     if(x.get() > 130){
       setLiked(1);
@@ -69,6 +64,7 @@ const ProfilesPage = () => {
     //console.log(liked);
   }
 
+  //funkcja odpala się w momencie gdy user przestaje dotykać ekran, lajkujemy bądź nie 
   const checkSwipePosibillity = () =>{
     if(liked === 1){
       clickedIconHandler("LIKE");
@@ -89,16 +85,16 @@ const ProfilesPage = () => {
         className="swipeArea"
         ref={constraintsRef}
         style={{ x }}
-        drag="x"
+        drag="x" //to nam blokuje swipe na ten po osi x-ów, jakby było damo "drag" to można latać po całym ekranie, jak drag='y', top tylko po y
         dragConstraints={constraintsRef}
         dragControls={controls}
-        dragListener={true}
+        dragListener={true} //chuj to wie co robi reszta, skopiowane z tych dwóch stron: https://codesandbox.io/s/drag-forked-gkkhv5?file=/src/Example.tsx:265-320, https://codesandbox.io/s/framer-motion-path-drawing-drag-and-usetransform-forked-42wjk4?file=/src/Example.tsx
         onDrag={setSwipeState}
         onDragEnd={checkSwipePosibillity}
       >
         {/* <Profile 
         className={classes.hiddenProfile} 
-        profileIndex={currentProfileIndex + 1} 
+        profileIndex={currentProfileIndex + 1} //tuataj będzie profil na spodzie, pod tym kóry jest aktualnie wybierany
         profileData={profileData} /> */}
         <Profile 
         className={classes.visibleProfile}
