@@ -7,13 +7,13 @@
   z-index: 1;
 }
 
-.informationHidden {
+.hiddenInformation {
   width: 90%;
   position: absolute;
   bottom: 16%;
   left: 50%;
   transform: translate(-50%);
-  z-index: 0;
+  z-index: 1;
 }
 
 .nameAgeWrapper {
@@ -45,7 +45,7 @@
   width: 80%;
   font-size: 18px;
   font-weight: 400px;
-  color: #fff;
+  color: white;
   text-shadow: black 1px 1px 1px;
 }
 

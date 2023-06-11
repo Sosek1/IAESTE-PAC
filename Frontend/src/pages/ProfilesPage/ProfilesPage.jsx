@@ -6,7 +6,6 @@ import TopBar from "../../components/TopBar";
 import Profile from "../../components/Profile/Profile";
 import classes from "./ProfilesPage.module.css";
 import IconsLayer from "../../components/Profile/IconsLayer";
-import MatchScreen from "../../components/Profile/MatchScreen";
 import MissedPairScreen from "../../components/PairNotMatchedScreen/MissedPairScreen";
 
 import { PROFILES_DATA as profileData } from "../../data/profileData";
@@ -62,7 +61,7 @@ const ProfilesPage = () => {
     }
     //console.log(x.get());
     //console.log(liked);
-  }
+  };
 
   //funkcja odpala się w momencie gdy user przestaje dotykać ekran, lajkujemy bądź nie 
   const checkSwipePosibillity = () =>{
@@ -71,7 +70,8 @@ const ProfilesPage = () => {
     }else if(liked === -1){
       clickedIconHandler("DISLIKE");
     }
-  }
+  };
+
 
   return (
     <motion.div
@@ -81,39 +81,39 @@ const ProfilesPage = () => {
       transition={{ duration: 0.5, delay: 1 }}
     >
       <TopBar />
-      <motion.div
-        className="swipeArea"
+      { currentProfileIndex !== (profileData.length - 1) && (<Profile 
+        className={classes.hiddenProfile} 
+        profileIndex={currentProfileIndex + 1} //tuataj będzie profil na spodzie, pod tym kóry jest aktualnie wybierany
+        profileData={profileData}
+        isHidden={true}
+        type="hidden"
+        /> )}
+       <motion.div
+        className={classes.swipeArea}
         ref={constraintsRef}
         style={{ x }}
-        drag="x" //to nam blokuje swipe na ten po osi x-ów, jakby było damo "drag" to można latać po całym ekranie, jak drag='y', top tylko po y
+        drag //to nam blokuje swipe na ten po osi x-ów, jakby było damo "drag" to można latać po całym ekranie, jak drag='y', top tylko po y
         dragConstraints={constraintsRef}
         dragControls={controls}
         dragListener={true} //chuj to wie co robi reszta, skopiowane z tych dwóch stron: https://codesandbox.io/s/drag-forked-gkkhv5?file=/src/Example.tsx:265-320, https://codesandbox.io/s/framer-motion-path-drawing-drag-and-usetransform-forked-42wjk4?file=/src/Example.tsx
         onDrag={setSwipeState}
         onDragEnd={checkSwipePosibillity}
       >
-        {/* <Profile 
-        className={classes.hiddenProfile} 
-        profileIndex={currentProfileIndex + 1} //tuataj będzie profil na spodzie, pod tym kóry jest aktualnie wybierany
-        profileData={profileData} /> */}
         <Profile 
         className={classes.visibleProfile}
         profileIndex={currentProfileIndex} 
-        profileData={profileData} />
-        {matchProfile && (
-          <MatchScreen
-            profileIndex={currentProfileIndex}
-            profileData={profileData}
-          />
-        )}
+        profileData={profileData} 
+        isHidden={false}
+        matchProfile={matchProfile}
+        />
         {showMissedPair && (
           <MissedPairScreen
             profileIndex={matchProfileIndex}
             profileData={profileData}
           />
         )}
-      </motion.div>
-      <IconsLayer clickedIcon={(reaction) => clickedIconHandler(reaction)} />
+      </motion.div> 
+      {!matchProfile && ( <IconsLayer clickedIcon={(reaction) => clickedIconHandler(reaction)} /> )}
     </motion.div>
   );
 };

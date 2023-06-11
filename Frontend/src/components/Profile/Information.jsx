@@ -6,10 +6,10 @@ const Information = ({
   currentPhotoIndex,
   currentProfileIndex,
   profileData,
-  hiddenProfile
+  isHidden
 }) => {
   return (
-    <div className={classes.information}>
+    <div className={`${isHidden ?  classes.hiddenInformation : classes.information}`}>
       <div className={classes.nameAgeWrapper}>
         <h2>{profileData[currentProfileIndex].name}</h2>
         <h3>{profileData[currentProfileIndex].age}</h3>

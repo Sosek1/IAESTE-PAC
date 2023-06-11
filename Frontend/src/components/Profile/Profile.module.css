@@ -1,8 +1,17 @@
 .container {
-  position: relative;
+  position: absolute;
   height: 90dvh;
   padding: 0 10px 0 10px;
   border-radius: 20px;
+}
+
+.hiddenContainer {
+  position: absolute;
+  height: 90dvh;
+  padding: 0 10px 0 10px;
+  border-radius: 20px;
+  margin-top: 9vh;
+
 }
 
 .imagesContainer {
@@ -34,7 +43,7 @@
   position: absolute;
   height: 100%;
   width: calc(50% - 10px);
-  z-index: 2;
+  z-index: 5;
 }
 
 .rightListener {
@@ -43,12 +52,20 @@
   width: calc(50% - 10px);
   right: 10px;
   /* background-color: #7cfda385; */
-  z-index: 2;
+  z-index: 5;
 }
 
 .gradient {
   position: sticky;
   height: 50%;
   background: linear-gradient(to top, #010101, rgba(0, 0, 0, 0));
-  bottom: 9%;
+  bottom: 9.7%;
+}
+
+.hiddenGradient {
+  position: sticky;
+  height: 50%;
+  background: linear-gradient(to top, #010101, rgba(0, 0, 0, 0));
+  bottom: 9.7%;
+  z-index: 0;
 }
