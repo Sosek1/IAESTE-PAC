@@ -55,7 +55,9 @@ const MultipleQuestion = (props) => {
       .toString()
       .replaceAll(",", " ");
 
-    props.nextQuestion(markedInterests);
+    if (counter === 5) {
+      props.nextQuestion(markedInterests);
+    }
   };
 
   return (

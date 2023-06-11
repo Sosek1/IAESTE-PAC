@@ -8,18 +8,17 @@ import {
   useMotionValue,
   useTransform,
 } from "framer-motion";
-import TopBar from "../../components/TopBar";
+import TopBar from "../../components/Topbar/TopBar";
 import Profile from "../../components/Profile/Profile";
 import classes from "./ProfilesPage.module.css";
 import IconsLayer from "../../components/Profile/IconsLayer";
-import MissedPairScreen from "../../components/PairNotMatchedScreen/MissedPairScreen";
 
 import { PROFILES_DATA as profileData } from "../../data/profileData";
 
 const ProfilesPage = () => {
   const [currentProfileIndex, setCurrentProfileIndex] = useState(0);
   const [matchProfile, setMatchProfile] = useState(false);
-  const [showMissedPair, setShowMissedPair] = useState(false);
+  const [missedPair, setMissedPair] = useState(false);
   const [liked, setLiked] = useState(0);
   const { matchedGroup } = useQuestions();
   const constraintsRef = useRef(null);
@@ -29,6 +28,8 @@ const ProfilesPage = () => {
   const matchProfileIndex = profileData.findIndex(
     (item) => item.name == matchedGroup[0]
   );
+
+  const matchOrMissPair = missedPair || matchProfile;
 
   //funkcja sprawdza czy nasz match jest ostatni w kolejności, jak nie to zamienia
   if (matchProfileIndex !== profileData.length - 1) {
@@ -49,7 +50,7 @@ const ProfilesPage = () => {
       currentProfileIndex === profileData.length - 1 &&
       matchProfile === false
     ) {
-      setShowMissedPair(true);
+      setMissedPair(true);
     }
 
     if (currentProfileIndex < profileData.length - 1)
@@ -58,9 +59,9 @@ const ProfilesPage = () => {
 
   //funkcja sprawdzająca położenie swipowanej grupy - setLiked = 1 -> polubione, 0 -> neutral, -1 -> dislike
   const setSwipeState = () => {
-    if (x.get() > 130) {
+    if (x.get() > 100) {
       setLiked(1);
-    } else if (x.get() < -130) {
+    } else if (x.get() < -100) {
       setLiked(-1);
     } else {
       setLiked(0);
@@ -113,15 +114,10 @@ const ProfilesPage = () => {
           profileData={profileData}
           isHidden={false}
           matchProfile={matchProfile}
+          missedPair={missedPair}
         />
-        {showMissedPair && (
-          <MissedPairScreen
-            profileIndex={matchProfileIndex}
-            profileData={profileData}
-          />
-        )}
       </motion.div>
-      {!matchProfile && (
+      {!matchOrMissPair && (
         <IconsLayer clickedIcon={(reaction) => clickedIconHandler(reaction)} />
       )}
     </motion.div>
