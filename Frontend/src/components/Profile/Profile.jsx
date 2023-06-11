@@ -4,7 +4,7 @@ import ProgressBar from "./ProgressBar";
 import Information from "./Information";
 import Sticker from "./Sticker";
 
-const Profile = ({ profileIndex, profileData }) => {
+const Profile = ({ profileIndex, profileData, isHidden }) => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [activeLikeSticker, setActiveLikeSticker] = useState(false);
   const [activeNopeSticker, setActiveNopeSticker] = useState(false);

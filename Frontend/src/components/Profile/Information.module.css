@@ -7,6 +7,15 @@
   z-index: 1;
 }
 
+.informationHidden {
+  width: 90%;
+  position: absolute;
+  bottom: 16%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 0;
+}
+
 .nameAgeWrapper {
   display: flex;
   align-items: center;

@@ -6,6 +6,7 @@ const Information = ({
   currentPhotoIndex,
   currentProfileIndex,
   profileData,
+  hiddenProfile
 }) => {
   return (
     <div className={classes.information}>
