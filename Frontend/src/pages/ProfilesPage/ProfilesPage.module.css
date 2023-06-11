@@ -1,11 +1,11 @@
 .profilePagecontainer {
-  height: 100dvh;
+  height: 100svh;
   padding-bottom: 10px;
   overflow-y: hidden;
   display: flex;
   flex-direction: column;
 }
 
-.swipeArea{
+.swipeArea {
   z-index: 2;
 }
