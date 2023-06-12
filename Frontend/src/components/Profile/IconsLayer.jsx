@@ -10,7 +10,7 @@ const IconsLayer = ({ clickedIcon }) => {
         <CloseRoundedIcon
           onClick={() => clickedIcon("DISLIKE")}
           style={{
-            fontSize: "40px",
+            fontSize: "30px",
             color: "#ff4458",
           }}
         />
@@ -19,7 +19,7 @@ const IconsLayer = ({ clickedIcon }) => {
         <FavoriteIcon
           onClick={() => clickedIcon("LIKE")}
           style={{
-            fontSize: "40px",
+            fontSize: "30px",
             color: "#7cfda3",
           }}
         />

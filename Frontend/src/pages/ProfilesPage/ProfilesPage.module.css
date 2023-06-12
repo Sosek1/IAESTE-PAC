@@ -9,3 +9,12 @@
 .swipeArea {
   z-index: 2;
 }
+
+@media (min-width: 500px) {
+  .profilePagecontainer {
+    width: 25%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

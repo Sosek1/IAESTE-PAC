@@ -59,3 +59,43 @@
 .submitAnswerDisabled {
   background-image: linear-gradient(to right, #f1f1f1, #f1f1f1);
 }
+
+@media (min-width: 500px) {
+  .singleQuestionContainer {
+    justify-content: space-around;
+  }
+
+  .singleQuestionContainer h1 {
+    font-size: 24px;
+    margin-bottom: 0;
+  }
+
+  .singleQuestionContainer ul {
+    align-items: center;
+  }
+
+  .singleQuestionContainer li {
+    width: 40%;
+    padding: 5px 5px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 30px;
+    list-style-type: none;
+    text-align: center;
+    transition: border 0.15s linear, color 0.15s linear;
+  }
+
+  .singleQuestionContainer li:hover {
+    cursor: pointer;
+  }
+
+  .singleQuestionContainer button {
+    width: 40%;
+    height: 30px;
+    font-size: 12px;
+    margin-top: 0;
+  }
+  .singleQuestionContainer button:hover {
+    cursor: pointer;
+  }
+}

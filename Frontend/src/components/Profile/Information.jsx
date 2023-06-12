@@ -8,6 +8,15 @@ const Information = ({
   profileData,
   isHidden,
 }) => {
+  let iconsStyle = {
+    fontSize: "20px",
+    color: "#656e7b",
+    marginRight: "5px",
+  };
+
+  if (window.innerWidth > 500) {
+    iconsStyle.fontSize = "15px";
+  }
   return (
     <div
       className={`${
@@ -26,13 +35,7 @@ const Information = ({
             <p>Teraz online</p>
           </div>
           <div className={classes.onlineDistanceWrapper}>
-            <FmdGoodOutlinedIcon
-              style={{
-                fontSize: "20px",
-                color: "#656e7b",
-                marginRight: "5px",
-              }}
-            />
+            <FmdGoodOutlinedIcon style={iconsStyle} />
             <p>{profileData[currentProfileIndex].distance}</p>
           </div>
         </div>

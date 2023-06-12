@@ -54,3 +54,18 @@
     top: 50%;
   }
 }
+
+@media (min-width: 500px) {
+  .match {
+    height: 100px;
+  }
+  .submitAnswear {
+    bottom: 20px;
+    font-size: 10px;
+    height: 25px;
+  }
+
+  .submitAnswear:hover {
+    cursor: pointer;
+  }
+}

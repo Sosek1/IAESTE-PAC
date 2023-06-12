@@ -62,14 +62,47 @@
   border: none;
   margin-top: auto;
 }
-.sendBottomGray {
-  width: 100%;
-  border-radius: 26px;
-  height: 40px;
-  background-color: gray;
-  box-shadow: 0 4px 2px -2px gray;
-  color: white;
-  font-weight: bold;
-  border: none;
-  margin-top: auto;
+
+@media (min-width: 500px) {
+  .SaveMailPage {
+    justify-content: center;
+  }
+  .SaveMailPage section {
+    width: 40%;
+  }
+
+  .header {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  .paragraph {
+    display: flex;
+    font-size: 12px;
+    color: rgb(176, 172, 172);
+  }
+
+  .SaveMailPage section {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .SaveMailPage input {
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .SaveMailPage a {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .sendBottomColor {
+    width: 40%;
+    height: 30px;
+    font-size: 12px;
+    margin-top: 0;
+    align-self: center;
+  }
 }

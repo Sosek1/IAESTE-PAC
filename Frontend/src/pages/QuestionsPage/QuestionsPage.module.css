@@ -5,3 +5,10 @@
   flex-direction: column;
   overflow-y: hidden;
 }
+
+@media (min-width: 500px) {
+  .questionsContainer {
+    height: clac(100vh - 40px);
+    padding: 0;
+  }
+}

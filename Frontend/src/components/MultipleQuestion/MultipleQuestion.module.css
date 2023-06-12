@@ -42,17 +42,8 @@
   border: 1px solid#ff6b6b;
 }
 
-.selected {
-  width: calc(100% / 3 - 20px);
-  padding: 20px;
-  text-align: center;
-  border: 1px solid #ff6b6b;
-  color: #ff6b6b;
-  border-radius: 40px;
-}
-
 .multipleQuestionContainer button {
-  min-height: 40px;
+  height: 40px;
   width: 100%;
   margin-top: auto;
   font-size: 18px;
@@ -73,4 +64,53 @@
 
 .disabledButton {
   background-color: #f1f1f1;
+}
+
+@media (min-width: 500px) {
+  .multipleQuestionContainer {
+    justify-content: space-around;
+  }
+
+  .multipleQuestionContainer header {
+    width: 40%;
+  }
+
+  .multipleQuestionContainer h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .multipleQuestionContainer p {
+    font-size: 12px;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .multipleQuestionContainer ul {
+    width: 40%;
+    gap: 5px;
+  }
+
+  .multipleQuestionContainer li {
+    padding: 0 5px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 30px;
+  }
+
+  .multipleQuestionContainer li:hover {
+    cursor: pointer;
+  }
+
+  .multipleQuestionContainer button {
+    width: 40%;
+    height: 30px;
+    font-size: 12px;
+    margin-top: 0;
+  }
+  .multipleQuestionContainer button:hover {
+    cursor: pointer;
+  }
 }

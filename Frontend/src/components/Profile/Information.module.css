@@ -1,7 +1,7 @@
 .information {
   width: 90%;
   position: absolute;
-  bottom: 110px;
+  bottom: 100px;
   left: 50%;
   transform: translate(-50%);
   z-index: 1;
@@ -89,4 +89,51 @@
   padding: 4px 12px;
   /* border: 2px solid #fff; */
   border-radius: 100px;
+}
+
+@media (min-width: 500px) {
+  .information {
+    bottom: 80px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 1;
+  }
+  .nameAgeWrapper h2 {
+    font-size: 21px;
+  }
+
+  .nameAgeWrapper h3 {
+    font-size: 18px;
+  }
+
+  .nameAgeWrapper img {
+    width: 27px;
+    height: 17px;
+  }
+
+  .information p {
+    font-size: 12px;
+  }
+
+  .onlineDistance p {
+    font-size: 12px;
+  }
+
+  .onlineDistanceWrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .interestsWrapper {
+    gap: 5px;
+  }
+
+  .interest {
+    font-size: 8px;
+  }
 }
