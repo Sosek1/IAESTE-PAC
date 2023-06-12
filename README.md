@@ -40,6 +40,7 @@ To get started, users are required to answer a series of questions that help fin
 
 - Javascript ES6+
 - React JS,Vite
+- Firebase real-time database
 - CSS Modules
 - Framer Motion
 - Materia UI icons
