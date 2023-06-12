@@ -30,13 +30,3 @@
 .iconStyles {
   font-size: 100px;
 }
-
-@media (min-width: 500px) {
-  .iconLayerWrapper {
-    bottom: 20px;
-  }
-  .iconBox {
-    width: 40px;
-    height: 40px;
-  }
-}

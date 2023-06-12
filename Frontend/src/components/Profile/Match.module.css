@@ -57,12 +57,12 @@
 
 @media (min-width: 500px) {
   .match {
-    height: 100px;
+    height: 200px;
   }
   .submitAnswear {
-    bottom: 20px;
-    font-size: 10px;
-    height: 25px;
+    bottom: 30px;
+    font-size: 18px;
+    height: 40px;
   }
 
   .submitAnswear:hover {

@@ -68,29 +68,29 @@
     justify-content: center;
   }
   .SaveMailPage section {
-    width: 40%;
+    width: 60%;
   }
 
   .header {
     margin-top: 0;
     margin-bottom: 20px;
-    font-size: 24px;
+    font-size: 48px;
   }
   .paragraph {
     display: flex;
-    font-size: 12px;
+    font-size: 18px;
     color: rgb(176, 172, 172);
   }
 
   .SaveMailPage section {
-    height: 200px;
+    height: 400px;
     display: flex;
     flex-direction: column;
   }
 
   .SaveMailPage input {
     height: 30px;
-    font-size: 12px;
+    font-size: 18px;
   }
 
   .SaveMailPage a {
@@ -99,10 +99,25 @@
   }
 
   .sendBottomColor {
-    width: 40%;
-    height: 30px;
-    font-size: 12px;
+    width: 70%;
+    height: 40px;
+    font-size: 18px;
     margin-top: 0;
     align-self: center;
   }
+
+  .SaveMailPage form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    /* position: fixed; */
+    margin-top: 10px;
+  }
+
+  .linkButton{
+    display: flex;
+    justify-content: center;
+  }
 }
+

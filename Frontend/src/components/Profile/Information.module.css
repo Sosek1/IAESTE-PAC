@@ -93,13 +93,13 @@
 
 @media (min-width: 500px) {
   .information {
-    bottom: 80px;
+    bottom: 100px;
     left: 50%;
     transform: translate(-50%);
     z-index: 1;
   }
   .nameAgeWrapper h2 {
-    font-size: 21px;
+    font-size: 36px;
   }
 
   .nameAgeWrapper h3 {
@@ -107,16 +107,16 @@
   }
 
   .nameAgeWrapper img {
-    width: 27px;
-    height: 17px;
+    width: 47px;
+    height: 37px;
   }
 
   .information p {
-    font-size: 12px;
+    font-size: 18px;
   }
 
   .onlineDistance p {
-    font-size: 12px;
+    font-size: 18px;
   }
 
   .onlineDistanceWrapper {
@@ -130,10 +130,10 @@
   }
 
   .interestsWrapper {
-    gap: 5px;
+    gap: 10px;
   }
 
   .interest {
-    font-size: 8px;
+    font-size: 12px;
   }
 }
