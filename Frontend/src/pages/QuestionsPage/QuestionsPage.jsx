@@ -28,7 +28,7 @@ const QuestionsPage = () => {
   const navigate = useNavigate();
 
   const nextQuestionHandler = (markedAnswer) => {
-    console.log(markedAnswer);
+    // console.log(markedAnswer);
     setGroups([...groups, markedAnswer]);
 
     if (questionsIndex < 5) {
@@ -47,7 +47,6 @@ const QuestionsPage = () => {
   };
 
   const lastQuestionHandler = () => {
-    index -= 1;
     setQuestionIndex((prev) => prev - 1);
   };
 
@@ -57,11 +56,10 @@ const QuestionsPage = () => {
 
   const separatedGroups = [];
   const countGroupPoints = () => {
-    
     const groupArrays = groups
       .filter((group) => group !== "brak")
       .map((group) => group.split(" "));
-    
+
     for (let group of groupArrays) {
       separatedGroups.push(...group);
     }
@@ -70,7 +68,6 @@ const QuestionsPage = () => {
       for (let group of separatedGroups) {
         addPoints(group);
       }
-      
     }
   };
 

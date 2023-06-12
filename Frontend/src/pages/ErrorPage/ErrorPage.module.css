@@ -1,6 +1,6 @@
 .errorPage {
   background-image: linear-gradient(to top right, #e7407d, #ef805e);
-  height: 100dvh;
+  height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;

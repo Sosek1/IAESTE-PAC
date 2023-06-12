@@ -12,14 +12,38 @@ const Profile = ({
   matchProfile,
   missedPair,
   isHidden,
+  liked,
 }) => {
   const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0);
   const [activeLikeSticker, setActiveLikeSticker] = useState(false);
   const [activeNopeSticker, setActiveNopeSticker] = useState(false);
 
+  const displayStickerHandler = () => {
+    if (liked > 80) {
+      setActiveLikeSticker(true);
+    } else if (liked < 80) {
+      setActiveNopeSticker(true);
+    } else {
+      setActiveLikeSticker(false);
+    }
+  };
+
   useEffect(() => {
     setCurrentPhotoIndex(0);
+    setActiveLikeSticker(false);
+    setActiveNopeSticker(false);
   }, [profileIndex]);
+
+  useEffect(() => {
+    if (liked === 1) {
+      setActiveLikeSticker(true);
+    } else if (liked === -1) {
+      setActiveNopeSticker(true);
+    } else if (liked === 0) {
+      setActiveLikeSticker(false);
+      setActiveNopeSticker(false);
+    }
+  }, [liked]);
 
   const leftListenerHandler = () => {
     if (currentPhotoIndex >= 1) {
@@ -28,7 +52,6 @@ const Profile = ({
   };
 
   const rightListenerHandler = () => {
-    console.log("xd");
     if (currentPhotoIndex < profileData[profileIndex].pictures.length - 1) {
       setCurrentPhotoIndex((prev) => prev + 1);
     }
@@ -49,8 +72,8 @@ const Profile = ({
         onClick={isHidden ? null : rightListenerHandler}
       ></div>
       <div className={classes.imagesContainer}>
-        <Sticker stickerText={"LIKE"} activeSticker={activeLikeSticker} />
-        <Sticker stickerText={"NOPE"} activeSticker={activeNopeSticker} />
+        {activeLikeSticker && <Sticker stickerText={"LIKE"} />}
+        {activeNopeSticker && <Sticker stickerText={"NOPE"} />}
         <ProgressBar
           profileData={profileData}
           currentPhotoIndex={currentPhotoIndex}

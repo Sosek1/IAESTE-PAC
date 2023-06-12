@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuestions } from "../../store/questions-context";
 import { useRef } from "react";
 import {
@@ -56,12 +56,12 @@ const ProfilesPage = () => {
     if (currentProfileIndex < profileData.length - 1)
       setCurrentProfileIndex((prev) => prev + 1);
   };
-
+  console.log(x.get());
   //funkcja sprawdzająca położenie swipowanej grupy - setLiked = 1 -> polubione, 0 -> neutral, -1 -> dislike
   const setSwipeState = () => {
-    if (x.get() > 100) {
+    if (x.get() > 80) {
       setLiked(1);
-    } else if (x.get() < -100) {
+    } else if (x.get() < -80) {
       setLiked(-1);
     } else {
       setLiked(0);
@@ -115,6 +115,7 @@ const ProfilesPage = () => {
           isHidden={false}
           matchProfile={matchProfile}
           missedPair={missedPair}
+          liked={liked}
         />
       </motion.div>
       {!matchOrMissPair && (
