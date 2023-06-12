@@ -10,7 +10,7 @@
   font-size: 30px;
   font-weight: 600;
   letter-spacing: 5px;
-  animation: showSticker 0.5s linear;
+  animation: showSticker 0.2s linear;
 }
 
 .like {

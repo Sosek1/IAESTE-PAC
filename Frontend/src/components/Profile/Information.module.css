@@ -1,7 +1,7 @@
 .information {
   width: 90%;
   position: absolute;
-  bottom: 16%;
+  bottom: 110px;
   left: 50%;
   transform: translate(-50%);
   z-index: 1;

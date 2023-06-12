@@ -1,6 +1,6 @@
 .profilePagecontainer {
-  height: 100svh;
-  padding-bottom: 10px;
+  height: calc(100svh - 10px);
+  margin-bottom: 10px;
   overflow-y: hidden;
   display: flex;
   flex-direction: column;

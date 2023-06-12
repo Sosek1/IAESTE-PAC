@@ -7,17 +7,18 @@
 }
 
 .hiddenContainer {
+  width: 100%;
+  height: 90svh;
   position: absolute;
-  height: 90dvh;
   padding: 0 10px 0 10px;
   border-radius: 20px;
-  margin-top: 9vh;
+  margin-top: calc(10svh - 10px);
   overflow-y: hidden;
 }
 
 .imagesContainer {
   width: 100%;
-  height: 90vh;
+  height: 90svh;
   position: relative;
   margin-bottom: 10px;
 }
@@ -59,25 +60,13 @@
 .gradient {
   position: sticky;
   height: 50%;
-  /* background: linear-gradient(to top, #010101, rgba(0, 0, 0, 0)); */
+  background: linear-gradient(to top, #010101, rgba(0, 0, 0, 0));
   bottom: 9.7%;
 }
-
-.gradient::before {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, #010101, rgba(0, 0, 0, 0));
-}
-
 .hiddenGradient {
   position: sticky;
   height: 50%;
-  background: linear-gradient(to top, #010101, rgba(0, 0, 0, 0));
+  background: linear-gradient(to top, rgb(1, 1, 1), rgba(0, 0, 0, 0));
   bottom: 9.7%;
   z-index: 0;
 }

@@ -72,8 +72,8 @@ const Profile = ({
         onClick={isHidden ? null : rightListenerHandler}
       ></div>
       <div className={classes.imagesContainer}>
-        {activeLikeSticker && <Sticker stickerText={"LIKE"} />}
-        {activeNopeSticker && <Sticker stickerText={"NOPE"} />}
+        {activeLikeSticker && !matchProfile && <Sticker stickerText={"LIKE"} />}
+        {activeNopeSticker && !missedPair && <Sticker stickerText={"NOPE"} />}
         <ProgressBar
           profileData={profileData}
           currentPhotoIndex={currentPhotoIndex}
@@ -89,10 +89,10 @@ const Profile = ({
           className={classes.image}
           src={profileData[profileIndex].pictures[currentPhotoIndex]}
         />
-        <div
+        {/* <div
           className={`${isHidden ? classes.hiddenGradient : classes.gradient}`}
-        />
-        <div className={classes.imgCover}></div>
+        /> */}
+        {/* <div className={classes.imgCover}></div> */}
         {matchProfile && <Match />}
         {missedPair && <MissedPair />}
       </div>

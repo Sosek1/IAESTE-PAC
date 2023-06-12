@@ -2,7 +2,7 @@
   height: auto;
   width: 100%;
   position: fixed;
-  bottom: 4%;
+  bottom: 40px;
   display: flex;
   justify-content: center;
   gap: 50px;
