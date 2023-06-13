@@ -89,10 +89,10 @@ const Profile = ({
           className={classes.image}
           src={profileData[profileIndex].pictures[currentPhotoIndex]}
         />
-        {/* <div
+        <div
           className={`${isHidden ? classes.hiddenGradient : classes.gradient}`}
-        /> */}
-        {/* <div className={classes.imgCover}></div> */}
+        />
+        <div className={classes.imgCover}></div>
         {matchProfile && <Match />}
         {missedPair && <MissedPair />}
       </div>
