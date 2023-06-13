@@ -16,7 +16,7 @@
 
 ## Project Description :mag:
 
-**Swipe&Join** is a convenient web application created with the purpose of simplifying the recruitment process for IAESTE AGH Organization. Specifically targeted at AGH UST students considering membership, this app features a user-friendly interface inspired by popular dating apps.
+**IAESTE PAC** is a convenient web application created with the purpose of simplifying the recruitment process for IAESTE AGH Organization. Specifically targeted at AGH UST students considering membership, this app features a user-friendly interface inspired by popular dating apps.
 
 To get started, users are required to answer a series of questions that help finding the right role for them. After that they can swipe between profiles to find their match. Each profile represents a distinct department within IAESTE AGH Organization, offering valuable insights into their responsibilities and the unique opportunities they provide.
 
