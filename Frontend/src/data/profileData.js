@@ -52,7 +52,7 @@ export const PROFILES_DATA = [
   {
     name: "IT",
     description:
-      "Jesteśmy grupą błyskotliwych poskramiaczy pythona aka programistów, tworzymy różne ciekawe projekty, które przzeplatamy z integracją",
+      "Jesteśmy grupą błyskotliwych poskramiaczy pythona aka programistów, tworzymy różne ciekawe projekty, które przeplatamy z integracją",
     distance: "W okolicy",
     pictures: [it1, it2, it3, it4],
     interests: ["strony", "aplikacje", "gry", "projekty", "szkolenia"],
@@ -60,7 +60,7 @@ export const PROFILES_DATA = [
   {
     name: "Grafika",
     description:
-      "Nie jesteśmy tacy jak inne grupy robocze. Zajmujemy się tworzeniem wszelkich grafik, których potrzebuje organizacja. Plakaty, kubki i Insta story nie są nam straszne. Czrodzieje tabletów, demony CMYKa.",
+      "Nie jesteśmy tacy jak inne grupy robocze. Zajmujemy się tworzeniem wszelkich grafik, których potrzebuje organizacja. Plakaty, kubki i Insta story nie są nam straszne. Czarodzieje tabletów, demony CMYKa.",
     distance: "W okolicy",
     pictures: [grafika1, grafika2, grafika3, grafika4],
     interests: [
@@ -92,6 +92,6 @@ export const PROFILES_DATA = [
       "Siemano! Jeśli nie jesteś frajerem, lubisz kolor czerwony, wolności słowa i wspólnotę, a także chciałbyś zdobyć kontakty lub mieć gadane jak niejeden dyktator, zapraszamy do JFRU! Tutaj wyszkolimy cię byś z numeru telefonicznego potrafił wyczarować wszystko i nic ☎️",
     distance: "W okolicy",
     pictures: [jfr1, jfr2, jfr3, jfr4, jfr5],
-    interests: ["JFR", "->", "Jebać", "Frajerów", "Razem"],
+    interests: ["sponsoring", "pieniądze", "gadżety", "telefony", "fifa"],
   },
 ];

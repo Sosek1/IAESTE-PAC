@@ -31,6 +31,8 @@ const SaveMailPage = () => {
     event.preventDefault();
 
     if (!validateEmail(email)) {
+      console.log("zły mail");
+      setError(true);
       setNotification("Podano zły email");
       return;
     }
@@ -40,26 +42,31 @@ const SaveMailPage = () => {
       group: matchedGroup,
     };
 
-    const response = await fetch(`${API_KEY}`, {
-      method: "POST",
-      body: JSON.stringify(emailData),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
+    console.log(emailData);
 
-    const responseData = await response.json();
-    console.log(responseData);
-    if (!response.ok) {
-      setNotification("Wysyłanie maila nie powiodło się");
-      setError(true);
-      throw new Error(data.message || "Could not add email");
-    }
+    // const response = await fetch(`${API_KEY}`, {
+    //   method: "POST",
+    //   body: JSON.stringify(emailData),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // });
+
+    // const responseData = await response.json();
+    // console.log(responseData);
+    // if (!response.ok) {
+    //   setNotification("Wysyłanie maila nie powiodło się");
+    //   setError(true);
+    //   throw new Error(data.message || "Could not add email");
+    // }
 
     setNotification("Wysyłanie maila powiodło się");
     setSuccess(true);
     setError(false);
-    navigate("/endingPage");
+    setTimeout(() => {
+      navigate("/endingPage");
+    }, 1000);
+
     setEmail("");
   };
 
