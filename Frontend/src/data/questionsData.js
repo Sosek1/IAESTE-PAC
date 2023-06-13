@@ -5,7 +5,7 @@ export const QUESTIONS_DATA = [
       ["Mariusz Pudzianowski", "HR"],
       ["Adam Małysz", "JFR"],
       ["Jan Paweł II", "Grafika IO PR"],
-      ["Kubica", "IT"],
+      ["Robert Kubica", "IT"],
     ],
     type: "single",
   },

@@ -1,20 +1,65 @@
 import classes from "./SaveMailPage.module.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useQuestions } from "../../store/questions-context";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const SaveMailPage = () => {
-  const [buttonActive, setButtonActive] = useState(false);
+  const API_KEY = import.meta.env.VITE_REAL_TIME_DB_KEY;
   const [email, setEmail] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+  const [notification, setNotification] = useState("");
+
+  const { matchedGroup } = useQuestions();
+
+  const navigate = useNavigate();
 
   const emailHandler = (event) => {
     setEmail(event.target.value);
   };
 
-  const sumbitFormHandler = (event) => {
+  const validateEmail = (email) => {
+    return String(email)
+      .toLowerCase()
+      .match(
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+  };
+
+  const sumbitFormHandler = async (event) => {
     event.preventDefault();
 
-    //gdzies to wyslemy
+    if (!validateEmail(email)) {
+      setNotification("Podano zły email");
+      return;
+    }
+
+    const emailData = {
+      emailAdress: email,
+      group: matchedGroup,
+    };
+
+    const response = await fetch(`${API_KEY}`, {
+      method: "POST",
+      body: JSON.stringify(emailData),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const responseData = await response.json();
+    console.log(responseData);
+    if (!response.ok) {
+      setNotification("Wysyłanie maila nie powiodło się");
+      setError(true);
+      throw new Error(data.message || "Could not add email");
+    }
+    setNotification("Wysyłanie maila powiodło się");
+    setSuccess(true);
+    setError(false);
+    setTimeout(() => {
+      navigate("/endingPage");
+    }, 1000);
     setEmail("");
   };
 
@@ -40,11 +85,10 @@ const SaveMailPage = () => {
             type="text"
             placeholder="Podaj email"
           />
-          <Link to="/endingPage" style={{ textDecoration: "none" }}>
-            <button type="submit" className={classes.sendBottomColor}>
-              Wyślij
-            </button>
-          </Link>
+          {(success || error) && <h2>{notification}</h2>}
+          <button type="submit" className={classes.sendBottomColor}>
+            Wyślij
+          </button>
         </form>
       </section>
     </motion.main>
