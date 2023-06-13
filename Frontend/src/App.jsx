@@ -14,12 +14,18 @@ function App() {
     }
   }, []);
 
-  window.screen.orientation.addEventListener("change", (e) => {
-    let screenOrientation = e.currentTarget.type;
+  window.addEventListener("resize", () => {
+    let screenOrientation = null;
 
-    if (screenOrientation === "portrait-primary") {
+    if (window.innerWidth > window.innerHeight) {
+      screenOrientation = "landscape";
+    } else {
+      screenOrientation = "portrait";
+    }
+
+    if (screenOrientation === "portrait") {
       setShowWarning(false);
-    } else if (screenOrientation === "landscape-primary") {
+    } else if (screenOrientation === "landscape") {
       if (portraitWidth < 500) {
         setShowWarning(true);
       } else {
