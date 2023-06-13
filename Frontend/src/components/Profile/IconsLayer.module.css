@@ -30,3 +30,9 @@
 .iconStyles {
   font-size: 100px;
 }
+
+@media (min-width: 500px) {
+  .iconBox:hover {
+    cursor: pointer;
+  }
+}

@@ -93,7 +93,7 @@
 
 @media (min-width: 500px) {
   .information {
-    bottom: 100px;
+    bottom: 120px;
     left: 50%;
     transform: translate(-50%);
     z-index: 1;
@@ -134,6 +134,6 @@
   }
 
   .interest {
-    font-size: 12px;
+    font-size: 14px;
   }
 }

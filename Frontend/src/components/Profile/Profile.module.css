@@ -70,3 +70,9 @@
   bottom: 9.7%;
   z-index: 0;
 }
+
+@media (min-width: 500px) {
+  .container:hover {
+    cursor: pointer;
+  }
+}

@@ -47,6 +47,7 @@ const SaveMailPage = () => {
         "Content-Type": "application/json",
       },
     });
+
     const responseData = await response.json();
     console.log(responseData);
     if (!response.ok) {
@@ -54,12 +55,11 @@ const SaveMailPage = () => {
       setError(true);
       throw new Error(data.message || "Could not add email");
     }
+
     setNotification("Wysyłanie maila powiodło się");
     setSuccess(true);
     setError(false);
-    setTimeout(() => {
-      navigate("/endingPage");
-    }, 1000);
+    navigate("/endingPage");
     setEmail("");
   };
 
