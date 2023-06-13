@@ -3,13 +3,12 @@
   <br>
 </p>
 
-## Table of Contents  📝
+## Table of Contents 📝
 
 - [Project Description](#project-description)
 - [Functionalities](#Functionalities)
 - [Used technologies and tools](#Used-technologies-and-tools)
 - [Authors](#Authors)
-
 
 ## Project Description :mag:
 
@@ -20,6 +19,7 @@ To get started, users are required to answer a series of questions that help fin
 [Click to find out more about IAESTE](https://www.facebook.com/IAESTE.AGH).
 
 ## Functionalities
+
 ### After reading the instructions, the user answers six fun questions, and then the program figures out which working group they should join based on their answers.
 
 <img height="30%" src="https://github.com/IAESTE-AGH/IAESTE-PAC/assets/68021413/5289cbe3-319c-4657-bc61-8df294cdb7cb">
@@ -30,11 +30,11 @@ To get started, users are required to answer a series of questions that help fin
 
 <img height="30%" src="https://github.com/IAESTE-AGH/IAESTE-PAC/assets/68021413/eddca13b-15d8-4dad-85e9-7076e6ff4da5">  
 <img height="30%" src="https://github.com/IAESTE-AGH/IAESTE-PAC/assets/68021413/048d0a8b-ce8d-4784-baea-ee97225fe69e">  
-<img height="30%" src="https://github.com/IAESTE-AGH/IAESTE-PAC/assets/68021413/8df214c0-ba5b-4d8e-8c6c-09b80b235c13">  
+<img height="30%" src="https://github.com/IAESTE-AGH/IAESTE-PAC/assets/68021413/8df214c0-ba5b-4d8e-8c6c-09b80b235c13">
 
 ### When the user gets to the match screen, they're asked to enter their email so they can get notified when the recruitment process starts.
 
-<img height="30%" src="https://github.com/IAESTE-AGH/IAESTE-PAC/assets/68021413/97c8f5f8-2331-4553-8758-6fb9e4508237">  
+<img height="30%" src="https://github.com/IAESTE-AGH/IAESTE-PAC/assets/68021413/97c8f5f8-2331-4553-8758-6fb9e4508237">
 
 ## Used technologies and tools :hammer_and_wrench:
 
@@ -46,6 +46,7 @@ To get started, users are required to answer a series of questions that help fin
 - Materia UI icons
 
 ## Authors
+
 - [Bartosz Sosin](https://github.com/Sosek1) - Project management, creating the project structure, checking and correcting commits, writing a large part of the code base
 - [Szymon Nowak](https://github.com/Szymon-Nowaq) - Creating swiping logic, instruction page, correcting multiple css files
 - [Szymon Skrzypczyk](https://github.com/SzymonSkrzypczyk) - Creating multiple question page - logic and styles, correcting instructions page content, converting images and changing its structure
